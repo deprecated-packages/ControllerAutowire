@@ -41,7 +41,7 @@ class SomeController // ...
 {
     private $someClass;
 
-    public function __constructor(SomeClass $someClass)
+    public function __construct(SomeClass $someClass)
     {
         $this->someClass = $someClass;
     }

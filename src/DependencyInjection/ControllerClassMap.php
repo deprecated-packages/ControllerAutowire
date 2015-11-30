@@ -1,9 +1,10 @@
 <?php
 
-/**
+/*
  * This file is part of Zenify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
+
 namespace Zenify\ControllerAutowire\DependencyInjection;
 
 use Zenify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;

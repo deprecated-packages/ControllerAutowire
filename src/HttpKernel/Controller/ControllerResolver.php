@@ -70,6 +70,7 @@ final class ControllerResolver implements ControllerResolverInterface
      */
     public function getArguments(Request $request, $controller)
     {
+        return $this->controllerResolver->getArguments($request, $controller);
     }
 
     /**

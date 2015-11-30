@@ -54,7 +54,7 @@ That's all :)
 # Testing
 
 ```bash
-phpunit
+$ phpunit
 ```
 
 

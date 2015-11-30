@@ -25,7 +25,7 @@ final class ControllerResolver implements ControllerResolverInterface
     private $container;
 
     /**
-     * @var \string[]
+     * @var string[]
      */
     private $controllerClassMap;
 
@@ -45,25 +45,24 @@ final class ControllerResolver implements ControllerResolverInterface
      */
     public function getController(Request $request)
     {
-        if (!$controller = $request->attributes->get('_controller')) {
+        if (!$controllerName = $request->attributes->get('_controller')) {
             return false;
         }
 
-        if (false !== strpos($controller, '::')) {
-            list($class, $method) = explode('::', $controller, 2);
-
-            if (isset($this->controllerClassMap[$class])) {
-                $controller = $this->container->get($this->controllerClassMap[$class]);
-
-                if ($controller instanceof ContainerAwareInterface) {
-                    $controller->setContainer($this->container);
-                }
-
-                return [$controller, $method];
-            }
+        if ($this->isClassController($controllerName)) {
+            return $this->controllerResolver->getController($request);
         }
 
-        return $this->controllerResolver->getController($request);
+        list($class, $method) = explode('::', $controllerName, 2);
+
+        if (!isset($this->controllerClassMap[$class])) {
+            return $this->controllerResolver->getController($request);
+        }
+
+        $controller = $this->getControllerService($class);
+        $controller = $this->decorateControllerWithContainer($controller);
+
+        return [$controller, $method];
     }
 
     /**
@@ -71,5 +70,36 @@ final class ControllerResolver implements ControllerResolverInterface
      */
     public function getArguments(Request $request, $controller)
     {
+    }
+
+    /**
+     * @param string $controllerName
+     * @return bool
+     */
+    private function isClassController($controllerName)
+    {
+        return false === strpos($controllerName, '::');
+    }
+
+    /**
+     * @param string $class
+     * @return object
+     */
+    private function getControllerService($class)
+    {
+        $serviceName = $this->controllerClassMap[$class];
+        return $this->container->get($serviceName);
+    }
+
+    /**
+     * @param object $controller
+     * @return object
+     */
+    private function decorateControllerWithContainer($controller)
+    {
+        if ($controller instanceof ContainerAwareInterface) {
+            $controller->setContainer($this->container);
+        }
+        return $controller;
     }
 }

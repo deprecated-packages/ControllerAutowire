@@ -74,6 +74,7 @@ final class ControllerResolver implements ControllerResolverInterface
 
     /**
      * @param string $controllerName
+     *
      * @return bool
      */
     private function isClassController($controllerName)
@@ -83,16 +84,19 @@ final class ControllerResolver implements ControllerResolverInterface
 
     /**
      * @param string $class
+     *
      * @return object
      */
     private function getControllerService($class)
     {
         $serviceName = $this->controllerClassMap[$class];
+
         return $this->container->get($serviceName);
     }
 
     /**
      * @param object $controller
+     *
      * @return object
      */
     private function decorateControllerWithContainer($controller)
@@ -100,6 +104,7 @@ final class ControllerResolver implements ControllerResolverInterface
         if ($controller instanceof ContainerAwareInterface) {
             $controller->setContainer($this->container);
         }
+
         return $controller;
     }
 }

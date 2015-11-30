@@ -2,9 +2,8 @@
 
 /**
  * This file is part of Zenify
- * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz)
+ * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
-
 namespace Zenify\ControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -18,7 +17,7 @@ final class DefaultAutowireTypesPass implements CompilerPassInterface
      * @var string[] Service name => autowired type
      */
     private $preferedAutowireTypes = [
-        'doctrine.orm.default_entity_manager' => 'Doctrine\ORM\EntityManagerInterface'
+        'doctrine.orm.default_entity_manager' => 'Doctrine\ORM\EntityManagerInterface',
     ];
 
     /**

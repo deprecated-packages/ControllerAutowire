@@ -2,9 +2,8 @@
 
 /**
  * This file is part of Zenify
- * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz)
+ * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
-
 namespace Zenify\ControllerAutowire\Tests\HttpKernel;
 
 use PHPUnit_Framework_TestCase;
@@ -27,7 +26,7 @@ final class ControllerFinderTest extends PHPUnit_Framework_TestCase
 
     public function testFindControllersInDirs()
     {
-        $controllers = $this->controllerFinder->findControllersInDirs([__DIR__ . '/ControllerFinderSource']);
+        $controllers = $this->controllerFinder->findControllersInDirs([__DIR__.'/ControllerFinderSource']);
 
         $this->assertSame(
             [SomeOtherController::class, SomeController::class],

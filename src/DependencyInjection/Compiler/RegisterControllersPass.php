@@ -2,9 +2,8 @@
 
 /**
  * This file is part of Zenify
- * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz)
+ * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
-
 namespace Zenify\ControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\Config\Definition\Processor;
@@ -64,11 +63,13 @@ final class RegisterControllersPass implements CompilerPassInterface
         $processor = new Processor();
         $configs = $containerBuilder->getExtensionConfig(ZenifyControllerAutowireBundle::ALIAS);
         $configs = $processor->processConfiguration(new Configuration(), $configs);
+
         return $containerBuilder->getParameterBag()->resolveValue($configs);
     }
 
     /**
      * @param string $class
+     *
      * @return string
      */
     private function buildControllerIdFromClass($class)
@@ -78,12 +79,14 @@ final class RegisterControllersPass implements CompilerPassInterface
 
     /**
      * @param string $class
+     *
      * @return Definition
      */
     private function buildControllerDefinitionFromClass($class)
     {
         $definition = new Definition($class);
         $definition->setAutowired(true);
+
         return $definition;
     }
 }

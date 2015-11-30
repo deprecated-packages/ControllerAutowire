@@ -2,9 +2,8 @@
 
 /**
  * This file is part of Zenify
- * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz)
+ * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
-
 namespace Zenify\ControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -42,11 +41,11 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
             $containerBuilder->removeDefinition(self::CONTROLLER_RESOLVER_SERVICE_NAME);
         }
 
-        $definition = new Definition(ControllerResolver::class);;
+        $definition = new Definition(ControllerResolver::class);
         $definition->addMethodCall('setControllerClassMap', [$this->controllerClassMap->getControllers()]);
         $definition->setArguments([
             new Reference('old.'.self::CONTROLLER_RESOLVER_SERVICE_NAME),
-            new Reference('service_container')
+            new Reference('service_container'),
         ]);
 
         $containerBuilder->setDefinition(self::CONTROLLER_RESOLVER_SERVICE_NAME, $definition);

@@ -16,7 +16,7 @@ final class AppKernel extends Kernel
     {
         return [
             new FrameworkBundle(),
-            new ZenifyControllerAutowireBundle()
+            new ZenifyControllerAutowireBundle(),
         ];
     }
 

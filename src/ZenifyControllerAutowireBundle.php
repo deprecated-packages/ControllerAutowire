@@ -2,9 +2,8 @@
 
 /**
  * This file is part of Zenify
- * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz)
+ * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
-
 namespace Zenify\ControllerAutowire;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -41,7 +40,6 @@ final class ZenifyControllerAutowireBundle extends Bundle
      */
     public function createContainerExtension()
     {
-
         return new ContainerExtension();
     }
 }

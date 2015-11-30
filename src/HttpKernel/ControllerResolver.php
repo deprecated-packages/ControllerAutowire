@@ -2,9 +2,8 @@
 
 /**
  * This file is part of Zenify
- * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz)
+ * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
-
 namespace Zenify\ControllerAutowire\HttpKernel;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -50,7 +49,7 @@ final class ControllerResolver implements ControllerResolverInterface
         }
 
         if (false !== strpos($controller, '::')) {
-            list ($class, $method) = explode('::', $controller, 2);
+            list($class, $method) = explode('::', $controller, 2);
 
             if (isset($this->controllerClassMap[$class])) {
                 $controller = $this->container->get($this->controllerClassMap[$class]);
@@ -58,6 +57,7 @@ final class ControllerResolver implements ControllerResolverInterface
                 if ($controller instanceof ContainerAwareInterface) {
                     $controller->setContainer($this->container);
                 }
+
                 return [$controller, $method];
             }
         }

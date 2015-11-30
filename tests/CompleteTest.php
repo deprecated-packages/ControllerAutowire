@@ -43,7 +43,7 @@ final class CompleteTest extends PHPUnit_Framework_TestCase
     public function testGetAutowiredController()
     {
         $request = new Request();
-        $request->attributes->set('_controller', SomeController::class .'::someAction');
+        $request->attributes->set('_controller', SomeController::class.'::someAction');
 
         /** @var SomeController $controller */
         $controller = $this->controllerResolver->getController($request)[0];
@@ -55,7 +55,7 @@ final class CompleteTest extends PHPUnit_Framework_TestCase
     public function testGetContainerAwareController()
     {
         $request = new Request();
-        $request->attributes->set('_controller', ContainerAwareController::class .'::someAction');
+        $request->attributes->set('_controller', ContainerAwareController::class.'::someAction');
 
         /** @var ContainerAwareController $controller */
         $controller = $this->controllerResolver->getController($request)[0];

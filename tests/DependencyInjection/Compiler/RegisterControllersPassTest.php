@@ -34,8 +34,8 @@ final class RegisterControllersPassTest extends PHPUnit_Framework_TestCase
 
         $containerBuilder->prependExtensionConfig(ZenifyControllerAutowireBundle::ALIAS, [
             'controller_dirs' => [
-                __DIR__.'/RegisterControllersPassSource'
-            ]
+                __DIR__.'/RegisterControllersPassSource',
+            ],
         ]);
         $this->registerControllersPass->process($containerBuilder);
 

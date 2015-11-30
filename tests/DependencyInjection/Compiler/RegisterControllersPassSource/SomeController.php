@@ -1,6 +1,6 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\DependencyInjection\Compiler\ReisterControllersPassSource;
+namespace Zenify\ControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource;
 
 class SomeController
 {

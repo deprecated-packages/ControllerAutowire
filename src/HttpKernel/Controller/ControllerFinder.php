@@ -5,7 +5,7 @@
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire\HttpKernel;
+namespace Zenify\ControllerAutowire\HttpKernel\Controller;
 
 use Nette\Caching\Storages\DevNullStorage;
 use Nette\Loaders\RobotLoader;

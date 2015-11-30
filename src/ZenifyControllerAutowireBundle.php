@@ -14,7 +14,7 @@ use Zenify\ControllerAutowire\DependencyInjection\Compiler\DefaultAutowireTypesP
 use Zenify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
 use Zenify\ControllerAutowire\DependencyInjection\Compiler\ReplaceControllerResolverPass;
 use Zenify\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
-use Zenify\ControllerAutowire\HttpKernel\ControllerFinder;
+use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
 
 final class ZenifyControllerAutowireBundle extends Bundle
 {

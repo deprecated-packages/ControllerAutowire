@@ -7,8 +7,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Zenify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
 use Zenify\ControllerAutowire\DependencyInjection\ControllerClassMap;
-use Zenify\ControllerAutowire\HttpKernel\ControllerFinder;
-use Zenify\ControllerAutowire\Tests\DependencyInjection\Compiler\ReisterControllersPassSource\SomeController;
+use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use Zenify\ControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource\SomeController;
 use Zenify\ControllerAutowire\ZenifyControllerAutowireBundle;
 
 final class RegisterControllersPassTest extends PHPUnit_Framework_TestCase

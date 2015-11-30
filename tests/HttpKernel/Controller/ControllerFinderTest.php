@@ -4,13 +4,13 @@
  * This file is part of Zenify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
-namespace Zenify\ControllerAutowire\Tests\HttpKernel;
+namespace Zenify\ControllerAutowire\Tests\HttpKernel\Controller;
 
 use PHPUnit_Framework_TestCase;
 use Zenify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
-use Zenify\ControllerAutowire\HttpKernel\ControllerFinder;
-use Zenify\ControllerAutowire\Tests\HttpKernel\ControllerFinderSource\SomeController;
-use Zenify\ControllerAutowire\Tests\HttpKernel\ControllerFinderSource\SomeOtherController;
+use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
+use Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeOtherController;
 
 final class ControllerFinderTest extends PHPUnit_Framework_TestCase
 {

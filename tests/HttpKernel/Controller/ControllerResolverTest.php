@@ -4,13 +4,13 @@
  * This file is part of Zenify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
-namespace Zenify\ControllerAutowire\Tests\HttpKernel;
+namespace Zenify\ControllerAutowire\Tests\HttpKernel\Controller;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
-use Zenify\ControllerAutowire\HttpKernel\ControllerResolver;
+use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
 
 final class ControllerResolverTest extends PHPUnit_Framework_TestCase
 {

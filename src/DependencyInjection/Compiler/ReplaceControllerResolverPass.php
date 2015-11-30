@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Zenify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
-use Zenify\ControllerAutowire\HttpKernel\ControllerResolver;
+use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
 
 final class ReplaceControllerResolverPass implements CompilerPassInterface
 {

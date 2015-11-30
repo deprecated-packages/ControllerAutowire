@@ -28,9 +28,13 @@ final class ControllerFinderTest extends PHPUnit_Framework_TestCase
     {
         $controllers = $this->controllerFinder->findControllersInDirs([__DIR__.'/ControllerFinderSource']);
 
-        $this->assertSame(
+        $this->assertEquals(
             [SomeController::class, SomeOtherController::class],
-            $controllers
+            $controllers,
+            '',
+            0.0,
+            10,
+            true
         );
     }
 }

@@ -1,0 +1,15 @@
+parameters:
+    kernel.secret: 123
+
+
+services:
+    some.service:
+        class: Zenify\ControllerAutowire\Tests\HttpKernel\ControllerFinderSource\SomeService
+    some.controller.service:
+        class: Zenify\ControllerAutowire\Tests\CompleteTestSource\DoNotScan\SomeRegisteredController
+
+
+zenify_controller_autowire:
+    controller_dirs:
+        - %kernel.root_dir%/HttpKernel/ControllerFinderSource
+        - %kernel.root_dir%/CompleteTestSource/Scan

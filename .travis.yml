@@ -1,0 +1,37 @@
+language: php
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+php:
+  - 5.6
+  - 7.0
+  - hhvm
+
+env:
+  - SYMFONY_VERSION=2.8.*@dev
+  - SYMFONY_VERSION="3.0.x-dev as 2
+
+before_install:
+  - if [[ "$SYMFONY_VERSION" != "" ]]; then composer require --no-update symfony/symfony:${SYMFONY_VERSION}; fi
+
+install:
+  - composer install --prefer-source
+  - if [[ $TRAVIS_PHP_VERSION = '5.6' ]]; then wget http://get.sensiolabs.org/php-cs-fixer.phar -O php-cs-fixer; fi
+
+before_script:
+  - composer selfupdate
+  - composer update --prefer-dist
+
+before_script:
+  - if [[ $TRAVIS_PHP_VERSION = '5.6' ]]; then PHPUNIT_FLAGS="--coverage-clover coverage.xml"; fi
+  - if [[ $TRAVIS_PHP_VERSION = '5.6' ]]; then php php-cs-fixer fix . --diff --dry-run -v --level=symfony --fixers=-psr0; fi
+
+script:
+  - phpunit $PHPUNIT_FLAGS
+
+after_script:
+  - if [[ $TRAVIS_PHP_VERSION = '5.6' ]]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover coverage.xml; fi

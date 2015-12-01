@@ -7,14 +7,12 @@
 
 namespace Zenify\ControllerAutowire\DependencyInjection\Compiler;
 
-use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Definition;
-use Zenify\ControllerAutowire\Config\Definition\Configuration;
+use Zenify\ControllerAutowire\Config\Definition\ConfigurationResolver;
 use Zenify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
 use Zenify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
-use Zenify\ControllerAutowire\ZenifyControllerAutowireBundle;
 
 final class RegisterControllersPass implements CompilerPassInterface
 {
@@ -39,10 +37,18 @@ final class RegisterControllersPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $containerBuilder)
     {
-        $config = $this->getResolvedConfig($containerBuilder);
-
-        $controllers = $this->controllerFinder->findControllersInDirs($config['controller_dirs']);
+        $controllerDirs = $this->getControllerDirs($containerBuilder);
+        $controllers = $this->controllerFinder->findControllersInDirs($controllerDirs);
         $this->registerControllersToContainerBuilder($controllers, $containerBuilder);
+    }
+
+    /**
+     * @return string[]
+     */
+    private function getControllerDirs(ContainerBuilder $containerBuilder)
+    {
+        $config = (new ConfigurationResolver())->resolveFromContainerBuilder($containerBuilder);
+        return $config['controller_dirs'];
     }
 
     private function registerControllersToContainerBuilder(array $controllers, ContainerBuilder $containerBuilder)
@@ -54,18 +60,6 @@ final class RegisterControllersPass implements CompilerPassInterface
             $containerBuilder->setDefinition($id, $definition);
             $this->controllerClassMap->addController($id, $controller);
         }
-    }
-
-    /**
-     * @return string[]
-     */
-    private function getResolvedConfig(ContainerBuilder $containerBuilder)
-    {
-        $processor = new Processor();
-        $configs = $containerBuilder->getExtensionConfig(ZenifyControllerAutowireBundle::ALIAS);
-        $configs = $processor->processConfiguration(new Configuration(), $configs);
-
-        return $containerBuilder->getParameterBag()->resolveValue($configs);
     }
 
     /**

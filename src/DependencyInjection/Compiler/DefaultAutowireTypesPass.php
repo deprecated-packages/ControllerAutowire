@@ -9,24 +9,17 @@ namespace Zenify\ControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use Zenify\ControllerAutowire\Config\Definition\ConfigurationResolver;
 
 final class DefaultAutowireTypesPass implements CompilerPassInterface
 {
-    /**
-     * @todo make configurable?
-     *
-     * @var string[] Service name => autowired type
-     */
-    private $preferedAutowireTypes = [
-        'doctrine.orm.default_entity_manager' => 'Doctrine\ORM\EntityManagerInterface',
-    ];
-
     /**
      * {@inheritdoc}
      */
     public function process(ContainerBuilder $containerBuilder)
     {
-        foreach ($this->preferedAutowireTypes as $serviceName => $type) {
+        $autowireTypes = $this->getAutowireTypes($containerBuilder);
+        foreach ($autowireTypes as $serviceName => $type) {
             if (!$containerBuilder->has($serviceName)) {
                 continue;
             }
@@ -38,5 +31,14 @@ final class DefaultAutowireTypesPass implements CompilerPassInterface
             $containerBuilder->getDefinition($serviceName)
                 ->setAutowiringTypes([$type]);
         }
+    }
+
+    /**
+     * @return string[]
+     */
+    private function getAutowireTypes(ContainerBuilder $containerBuilder)
+    {
+        $config = (new ConfigurationResolver())->resolveFromContainerBuilder($containerBuilder);
+        return $config['autowire_types'];
     }
 }

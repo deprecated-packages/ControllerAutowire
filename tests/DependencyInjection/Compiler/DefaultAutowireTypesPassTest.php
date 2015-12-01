@@ -14,6 +14,7 @@ final class DefaultAutowireTypesPassTest extends PHPUnit_Framework_TestCase
         $defaultAutowireTypesPass = new DefaultAutowireTypesPass();
 
         $containerBuilder = new ContainerBuilder();
+        $containerBuilder->setParameter('kernel.root_dir', __DIR__);
 
         $definition = new Definition('Doctrine\ORM\EntityManagerInterface');
         $containerBuilder->setDefinition('doctrine.orm.default_entity_manager', $definition);

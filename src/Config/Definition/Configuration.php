@@ -14,6 +14,18 @@ use Zenify\ControllerAutowire\ZenifyControllerAutowireBundle;
 final class Configuration implements ConfigurationInterface
 {
     /**
+     * @var string[]
+     */
+    private $defaultControllerDirs = ['%kernel.root_dir%', '%kernel.root_dir%/../src'];
+
+    /**
+     * @var string[]
+     */
+    private $defaultAutowireTypes = [
+        'doctrine.orm.default_entity_manager' => 'Doctrine\ORM\EntityManagerInterface'
+    ];
+
+    /**
      * {@inheritdoc}
      */
     public function getConfigTreeBuilder()
@@ -24,12 +36,15 @@ final class Configuration implements ConfigurationInterface
 
         $rootNode->children()
             ->arrayNode('controller_dirs')
-                ->defaultValue(['%kernel.root_dir%', '%kernel.root_dir%/../src'])
-                    ->prototype('scalar')
-                    ->end()
-                ->end()
-            ->end()
-        ->end();
+                ->defaultValue($this->defaultControllerDirs)
+                ->prototype('scalar')
+            ->end();
+
+        $rootNode->children()
+            ->arrayNode('autowire_types')
+                ->defaultValue($this->defaultAutowireTypes)
+                ->prototype('scalar')
+            ->end();
 
         return $treeBuilder;
     }

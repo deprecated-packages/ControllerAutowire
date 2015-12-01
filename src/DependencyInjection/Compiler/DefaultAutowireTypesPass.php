@@ -31,6 +31,10 @@ final class DefaultAutowireTypesPass implements CompilerPassInterface
                 continue;
             }
 
+            if ($containerBuilder->hasAlias($serviceName)) {
+                $serviceName = $containerBuilder->getAlias($serviceName);
+            }
+
             $containerBuilder->getDefinition($serviceName)
                 ->setAutowiringTypes([$type]);
         }

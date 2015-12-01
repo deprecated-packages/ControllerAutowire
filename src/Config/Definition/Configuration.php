@@ -22,7 +22,7 @@ final class Configuration implements ConfigurationInterface
      * @var string[]
      */
     private $defaultAutowireTypes = [
-        'doctrine.orm.default_entity_manager' => 'Doctrine\ORM\EntityManagerInterface'
+        'doctrine.orm.default_entity_manager' => 'Doctrine\ORM\EntityManagerInterface',
     ];
 
     /**

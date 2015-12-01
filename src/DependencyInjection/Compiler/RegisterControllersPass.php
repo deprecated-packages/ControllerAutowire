@@ -48,6 +48,7 @@ final class RegisterControllersPass implements CompilerPassInterface
     private function getControllerDirs(ContainerBuilder $containerBuilder)
     {
         $config = (new ConfigurationResolver())->resolveFromContainerBuilder($containerBuilder);
+
         return $config['controller_dirs'];
     }
 

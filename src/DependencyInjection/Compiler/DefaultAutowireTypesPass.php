@@ -39,6 +39,7 @@ final class DefaultAutowireTypesPass implements CompilerPassInterface
     private function getAutowireTypes(ContainerBuilder $containerBuilder)
     {
         $config = (new ConfigurationResolver())->resolveFromContainerBuilder($containerBuilder);
+
         return $config['autowire_types'];
     }
 }

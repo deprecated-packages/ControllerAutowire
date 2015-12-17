@@ -49,11 +49,7 @@ final class ControllerResolver implements ControllerResolverInterface
             return false;
         }
 
-        if ($this->isClassController($controllerName)) {
-            return $this->controllerResolver->getController($request);
-        }
-
-        list($class, $method) = explode('::', $controllerName, 2);
+        list($class, $method) = $this->splitControllerClassAndMethod($controllerName);
 
         if (!isset($this->controllerClassMap[$class])) {
             return $this->controllerResolver->getController($request);
@@ -71,16 +67,6 @@ final class ControllerResolver implements ControllerResolverInterface
     public function getArguments(Request $request, $controller)
     {
         return $this->controllerResolver->getArguments($request, $controller);
-    }
-
-    /**
-     * @param string $controllerName
-     *
-     * @return bool
-     */
-    private function isClassController($controllerName)
-    {
-        return false === strpos($controllerName, '::');
     }
 
     /**
@@ -107,5 +93,18 @@ final class ControllerResolver implements ControllerResolverInterface
         }
 
         return $controller;
+    }
+
+    /**
+     * @param string $controllerName
+     * @return array
+     */
+    private function splitControllerClassAndMethod($controllerName)
+    {
+        if (false !== strpos($controllerName, '::')) {
+            return explode('::', $controllerName, 2);
+        } elseif (false !== strpos($controllerName, ':')) {
+            return explode(':', $controllerName, 2);
+        }
     }
 }

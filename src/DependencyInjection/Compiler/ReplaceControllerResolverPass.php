@@ -7,6 +7,7 @@
 
 namespace Zenify\ControllerAutowire\DependencyInjection\Compiler;
 
+use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Definition;
@@ -26,6 +27,11 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
      */
     private $controllerClassMap;
 
+    /**
+     * @var bool
+     */
+    private $isControllerResolverAliased = false;
+
     public function __construct(ControllerClassMapInterface $controllerClassMap)
     {
         $this->controllerClassMap = $controllerClassMap;
@@ -36,19 +42,55 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $containerBuilder)
     {
-        if ($containerBuilder->hasDefinition(self::CONTROLLER_RESOLVER_SERVICE_NAME)) {
-            $oldResolver = $containerBuilder->getDefinition(self::CONTROLLER_RESOLVER_SERVICE_NAME);
-            $containerBuilder->setDefinition('old.'.self::CONTROLLER_RESOLVER_SERVICE_NAME, $oldResolver);
-            $containerBuilder->removeDefinition(self::CONTROLLER_RESOLVER_SERVICE_NAME);
+        $controllerResolverServiceName = $this->getCurrentControllerResolverServiceName($containerBuilder);
+
+        if ($this->isControllerResolverAliased) {
+            $definition = $this->createDefinitionWithDecoratingResolver($controllerResolverServiceName);
+
+            $containerBuilder->setDefinition('default.controller_resolver', $definition);
+        } else {
+            $oldResolver = $containerBuilder->getDefinition($controllerResolverServiceName);
+            $containerBuilder->setDefinition('old.'.$controllerResolverServiceName, $oldResolver);
+            $containerBuilder->removeDefinition($controllerResolverServiceName);
+
+            $definition = $this->createDefinitionWithDecoratingResolver('old.'.$controllerResolverServiceName);
+
+            $containerBuilder->setDefinition('zenify.autowire_controller_controller_resolver', $definition);
+            $containerBuilder->setAlias($controllerResolverServiceName, new Alias('zenify.autowire_controller_controller_resolver', true));
+        }
+    }
+
+    /**
+     * @param ContainerBuilder $containerBuilder
+     *
+     * @return bool|string
+     */
+    private function getCurrentControllerResolverServiceName(ContainerBuilder $containerBuilder)
+    {
+        if ($containerBuilder->hasAlias(self::CONTROLLER_RESOLVER_SERVICE_NAME)) {
+            $this->isControllerResolverAliased = true;
+            $alias = $containerBuilder->getAlias(self::CONTROLLER_RESOLVER_SERVICE_NAME);
+
+            return (string) $alias;
         }
 
+        return self::CONTROLLER_RESOLVER_SERVICE_NAME;
+    }
+
+    /**
+     * @param string $controllerResolverServiceName
+     *
+     * @return Definition
+     */
+    private function createDefinitionWithDecoratingResolver($controllerResolverServiceName)
+    {
         $definition = new Definition(ControllerResolver::class);
         $definition->addMethodCall('setControllerClassMap', [$this->controllerClassMap->getControllers()]);
         $definition->setArguments([
-            new Reference('old.'.self::CONTROLLER_RESOLVER_SERVICE_NAME),
+            new Reference($controllerResolverServiceName),
             new Reference('service_container'),
         ]);
 
-        $containerBuilder->setDefinition(self::CONTROLLER_RESOLVER_SERVICE_NAME, $definition);
+        return $definition;
     }
 }

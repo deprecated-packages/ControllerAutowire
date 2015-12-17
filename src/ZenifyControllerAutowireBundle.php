@@ -7,6 +7,7 @@
 
 namespace Zenify\ControllerAutowire;
 
+use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Zenify\ControllerAutowire\DependencyInjection\ControllerClassMap;
@@ -32,8 +33,9 @@ final class ZenifyControllerAutowireBundle extends Bundle
         $controllerFinder = new ControllerFinder();
 
         $container->addCompilerPass(new RegisterControllersPass($controllerClassMap, $controllerFinder));
-        $container->addCompilerPass(new ReplaceControllerResolverPass($controllerClassMap));
         $container->addCompilerPass(new DefaultAutowireTypesPass());
+
+        $container->addCompilerPass(new ReplaceControllerResolverPass($controllerClassMap), PassConfig::TYPE_OPTIMIZE);
     }
 
     /**

@@ -1,0 +1,3 @@
+services:
+    some_alias.controller_resolver:
+        class: Zenify\ControllerAutowire\Tests\AliasingBundle\HttpKernel\SomeControllerResolver

@@ -97,6 +97,7 @@ final class ControllerResolver implements ControllerResolverInterface
 
     /**
      * @param string $controllerName
+     *
      * @return array
      */
     private function splitControllerClassAndMethod($controllerName)

@@ -84,12 +84,12 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
      */
     private function createDefinitionWithDecoratingResolver($controllerResolverServiceName)
     {
-        $definition = new Definition(ControllerResolver::class);
-        $definition->addMethodCall('setControllerClassMap', [$this->controllerClassMap->getControllers()]);
-        $definition->setArguments([
+        $definition = new Definition(ControllerResolver::class, [
             new Reference($controllerResolverServiceName),
             new Reference('service_container'),
+            new Reference('controller_name_converter')
         ]);
+        $definition->addMethodCall('setControllerClassMap', [$this->controllerClassMap->getControllers()]);
 
         return $definition;
     }

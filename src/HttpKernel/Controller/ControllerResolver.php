@@ -7,6 +7,7 @@
 
 namespace Zenify\ControllerAutowire\HttpKernel\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,14 +26,23 @@ final class ControllerResolver implements ControllerResolverInterface
     private $container;
 
     /**
+     * @var ControllerNameParser
+     */
+    private $controllerNameParser;
+
+    /**
      * @var string[]
      */
     private $controllerClassMap;
 
-    public function __construct(ControllerResolverInterface $controllerResolver, ContainerInterface $container)
-    {
+    public function __construct(
+        ControllerResolverInterface $controllerResolver,
+        ContainerInterface $container,
+        ControllerNameParser $controllerNameParser
+    ) {
         $this->controllerResolver = $controllerResolver;
         $this->container = $container;
+        $this->controllerNameParser = $controllerNameParser;
     }
 
     public function setControllerClassMap(array $controllerClassMap)
@@ -103,6 +113,9 @@ final class ControllerResolver implements ControllerResolverInterface
     private function splitControllerClassAndMethod($controllerName)
     {
         if (false !== strpos($controllerName, '::')) {
+            return explode('::', $controllerName, 2);
+        } elseif (substr_count($controllerName, ':') === 2) {
+            $controllerName = $this->controllerNameParser->parse($controllerName);
             return explode('::', $controllerName, 2);
         } elseif (false !== strpos($controllerName, ':')) {
             return explode(':', $controllerName, 2);

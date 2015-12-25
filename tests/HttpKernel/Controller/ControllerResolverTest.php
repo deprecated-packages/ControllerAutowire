@@ -3,6 +3,7 @@
 namespace Zenify\ControllerAutowire\Tests\HttpKernel\Controller;
 
 use PHPUnit_Framework_TestCase;
+use Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
@@ -17,11 +18,7 @@ final class ControllerResolverTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $parentControllerResolverMock = $this->prophesize(ControllerResolverInterface::class);
-        $containerMock = $this->prophesize(ContainerInterface::class);
-        $this->controllerResolver = new ControllerResolver(
-            $parentControllerResolverMock->reveal(), $containerMock->reveal()
-        );
+        $this->controllerResolver = $this->createControllerResolverWithMocks();
     }
 
     public function testGetController()
@@ -37,6 +34,22 @@ final class ControllerResolverTest extends PHPUnit_Framework_TestCase
     {
         $this->assertNull(
             $this->controllerResolver->getArguments(new Request(), 'missing')
+        );
+    }
+
+    /**
+     * @return ControllerResolver
+     */
+    private function createControllerResolverWithMocks()
+    {
+        $parentControllerResolverMock = $this->prophesize(ControllerResolverInterface::class);
+        $containerMock = $this->prophesize(ContainerInterface::class);
+        $controllerNameParser = $this->prophesize(ControllerNameParser::class);
+
+        return new ControllerResolver(
+            $parentControllerResolverMock->reveal(),
+            $containerMock->reveal(),
+            $controllerNameParser->reveal()
         );
     }
 }

@@ -87,7 +87,7 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
         $definition = new Definition(ControllerResolver::class, [
             new Reference($controllerResolverServiceName),
             new Reference('service_container'),
-            new Reference('controller_name_converter')
+            new Reference('controller_name_converter'),
         ]);
         $definition->addMethodCall('setControllerClassMap', [$this->controllerClassMap->getControllers()]);
 

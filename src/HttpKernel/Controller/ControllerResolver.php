@@ -115,6 +115,7 @@ final class ControllerResolver implements ControllerResolverInterface
             return explode('::', $controllerName, 2);
         } elseif (substr_count($controllerName, ':') === 2) {
             $controllerName = $this->controllerNameParser->parse($controllerName);
+
             return explode('::', $controllerName, 2);
         } elseif (false !== strpos($controllerName, ':')) {
             return explode(':', $controllerName, 2);

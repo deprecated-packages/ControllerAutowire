@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Tests\Controller;
 use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
+use Zenify\ControllerAutowire\Tests\AliasingBundle\Controller\AliasController;
 use Zenify\ControllerAutowire\Tests\CompleteTestSource\Scan\ContainerAwareController;
 use Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
 use Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService;
@@ -63,5 +64,14 @@ final class CompleteAliasingTest extends PHPUnit_Framework_TestCase
 
         $controller = $this->controllerResolver->getController($request);
         $this->assertNull($controller);
+    }
+
+    public function testGetControllerAliasConfig()
+    {
+        $request = new Request();
+        $request->attributes->set('_controller', 'AliasingBundle:Alias:some');
+
+        $controller = $this->controllerResolver->getController($request)[0];
+        $this->assertInstanceOf(AliasController::class, $controller);
     }
 }

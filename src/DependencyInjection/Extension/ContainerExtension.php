@@ -1,15 +1,15 @@
 <?php
 
 /*
- * This file is part of Zenify
+ * This file is part of Symotion
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire\DependencyInjection\Extension;
+namespace Symotion\ControllerAutowire\DependencyInjection\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use Zenify\ControllerAutowire\ZenifyControllerAutowireBundle;
+use Symotion\ControllerAutowire\SymotionControllerAutowireBundle;
 
 final class ContainerExtension implements ExtensionInterface
 {
@@ -39,6 +39,6 @@ final class ContainerExtension implements ExtensionInterface
      */
     public function getAlias()
     {
-        return ZenifyControllerAutowireBundle::ALIAS;
+        return SymotionControllerAutowireBundle::ALIAS;
     }
 }

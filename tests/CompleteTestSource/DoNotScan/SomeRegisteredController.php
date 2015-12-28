@@ -1,6 +1,6 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\CompleteTestSource\DoNotScan;
+namespace Symotion\ControllerAutowire\Tests\CompleteTestSource\DoNotScan;
 
 final class SomeRegisteredController
 {

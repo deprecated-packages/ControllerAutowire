@@ -1,12 +1,12 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\HttpKernel\Controller;
+namespace Symotion\ControllerAutowire\Tests\HttpKernel\Controller;
 
 use PHPUnit_Framework_TestCase;
-use Zenify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
-use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
-use Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
-use Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeOtherController;
+use Symotion\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
+use Symotion\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use Symotion\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
+use Symotion\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeOtherController;
 
 final class ControllerFinderTest extends PHPUnit_Framework_TestCase
 {

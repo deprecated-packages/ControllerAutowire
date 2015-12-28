@@ -1,11 +1,11 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\AliasingBundle;
+namespace Symotion\ControllerAutowire\Tests\AliasingBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Zenify\ControllerAutowire\Tests\AliasingBundle\DependencyInjection\AliasingExtension;
-use Zenify\ControllerAutowire\Tests\AliasingBundle\DependencyInjection\Compiler\AliasingCompilerPass;
+use Symotion\ControllerAutowire\Tests\AliasingBundle\DependencyInjection\AliasingExtension;
+use Symotion\ControllerAutowire\Tests\AliasingBundle\DependencyInjection\Compiler\AliasingCompilerPass;
 
 final class AliasingBundle extends Bundle
 {

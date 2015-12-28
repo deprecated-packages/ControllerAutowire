@@ -1,15 +1,15 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\DependencyInjection\Compiler;
+namespace Symotion\ControllerAutowire\Tests\DependencyInjection\Compiler;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use Zenify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
-use Zenify\ControllerAutowire\DependencyInjection\ControllerClassMap;
-use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
-use Zenify\ControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource\SomeController;
-use Zenify\ControllerAutowire\ZenifyControllerAutowireBundle;
+use Symotion\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
+use Symotion\ControllerAutowire\DependencyInjection\ControllerClassMap;
+use Symotion\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use Symotion\ControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource\SomeController;
+use Symotion\ControllerAutowire\SymotionControllerAutowireBundle;
 
 final class RegisterControllersPassTest extends PHPUnit_Framework_TestCase
 {
@@ -32,7 +32,7 @@ final class RegisterControllersPassTest extends PHPUnit_Framework_TestCase
         $containerBuilder = new ContainerBuilder();
         $this->assertCount(0, $containerBuilder->getDefinitions());
 
-        $containerBuilder->prependExtensionConfig(ZenifyControllerAutowireBundle::ALIAS, [
+        $containerBuilder->prependExtensionConfig(SymotionControllerAutowireBundle::ALIAS, [
             'controller_dirs' => [
                 __DIR__.'/RegisterControllersPassSource',
             ],

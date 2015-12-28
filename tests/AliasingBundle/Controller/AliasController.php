@@ -1,6 +1,6 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\AliasingBundle\Controller;
+namespace Symotion\ControllerAutowire\Tests\AliasingBundle\Controller;
 
 final class AliasController
 {

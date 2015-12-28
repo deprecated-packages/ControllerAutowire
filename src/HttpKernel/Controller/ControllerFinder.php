@@ -1,15 +1,15 @@
 <?php
 
 /*
- * This file is part of Zenify
+ * This file is part of Symotion
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire\HttpKernel\Controller;
+namespace Symotion\ControllerAutowire\HttpKernel\Controller;
 
 use Nette\Caching\Storages\DevNullStorage;
 use Nette\Loaders\RobotLoader;
-use Zenify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
+use Symotion\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
 
 final class ControllerFinder implements ControllerFinderInterface
 {

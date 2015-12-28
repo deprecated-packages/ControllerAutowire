@@ -1,17 +1,17 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests;
+namespace Symotion\ControllerAutowire\Tests;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Tests\Controller;
-use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
-use Zenify\ControllerAutowire\Tests\CompleteTestSource\DoNotScan\SomeRegisteredController;
-use Zenify\ControllerAutowire\Tests\CompleteTestSource\Scan\ContainerAwareController;
-use Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
-use Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService;
+use Symotion\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
+use Symotion\ControllerAutowire\Tests\CompleteTestSource\DoNotScan\SomeRegisteredController;
+use Symotion\ControllerAutowire\Tests\CompleteTestSource\Scan\ContainerAwareController;
+use Symotion\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
+use Symotion\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService;
 
 final class CompleteTest extends PHPUnit_Framework_TestCase
 {

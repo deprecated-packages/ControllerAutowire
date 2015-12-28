@@ -1,9 +1,9 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\DependencyInjection\Extension;
+namespace Symotion\ControllerAutowire\Tests\DependencyInjection\Extension;
 
 use PHPUnit_Framework_TestCase;
-use Zenify\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
+use Symotion\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
 
 final class ContainerExtensionTest extends PHPUnit_Framework_TestCase
 {

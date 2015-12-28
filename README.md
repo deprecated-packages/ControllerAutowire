@@ -1,21 +1,30 @@
 # Controller Autowire
 
-[![Build Status](https://img.shields.io/travis/Zenify/ControllerAutowire.svg?style=flat-square)](https://travis-ci.org/Zenify/ControllerAutowire)
-[![Quality Score](https://img.shields.io/scrutinizer/g/Zenify/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Zenify/ControllerAutowire)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/Zenify/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Zenify/ControllerAutowire)
-[![Downloads](https://img.shields.io/packagist/dt/zenify/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/zenify/controller-autowire)
-[![Latest stable](https://img.shields.io/packagist/v/zenify/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/zenify/controller-autowire)
+[![Build Status](https://img.shields.io/travis/Symotion/ControllerAutowire.svg?style=flat-square)](https://travis-ci.org/Symotion/ControllerAutowire)
+[![Quality Score](https://img.shields.io/scrutinizer/g/Symotion/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Symotion/ControllerAutowire)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/Symotion/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Symotion/ControllerAutowire)
+[![Downloads](https://img.shields.io/packagist/dt/symotion/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symotion/controller-autowire)
+[![Latest stable](https://img.shields.io/packagist/v/symotion/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symotion/controller-autowire)
 
-Use controller's constructor to get dependencies with ease.
+If you still wonder **why using controller as services**, **check few arguments** about this topic:
 
-- no @Route annotations
-- no special syntax for routes
-- no explicit controller service registration
+- [Richar Miller - Symfony2: Controller as Service](http://richardmiller.co.uk/2011/04/15/symfony2-controller-as-service)
+- [Matthias Noback - How to create framework independent controllers](http://php-and-symfony.matthiasnoback.nl/2014/06/how-to-create-framework-independent-controllers/)
+ 
+Later, you would [find tutorials, how to do it](http://stackoverflow.com/a/31366589/1348344).
+
+In short, it requires these 3 steps: 
+
+- @Route service annotations
+- custom syntax for routes
+- explicit controller service registration
+
+**This bundle removes these steps** and **enables controllers as service** for you. 
 
 ## Install
 
 ```bash
-$ composer require zenify/controller-autowire
+$ composer require symotion/controller-autowire
 ```
 
 Add bundle to `AppKernel.php`:
@@ -26,7 +35,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = [
-            new Zenify\ControllerAutowire\ZenifyControllerAutowireBundle(),
+            new Symotion\ControllerAutowire\SymotionControllerAutowireBundle(),
             // ...
         ];
     }

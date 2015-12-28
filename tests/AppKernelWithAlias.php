@@ -1,12 +1,12 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests;
+namespace Symotion\ControllerAutowire\Tests;
 
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use Zenify\ControllerAutowire\Tests\AliasingBundle\AliasingBundle;
-use Zenify\ControllerAutowire\ZenifyControllerAutowireBundle;
+use Symotion\ControllerAutowire\Tests\AliasingBundle\AliasingBundle;
+use Symotion\ControllerAutowire\SymotionControllerAutowireBundle;
 
 final class AppKernelWithAlias extends Kernel
 {
@@ -17,7 +17,7 @@ final class AppKernelWithAlias extends Kernel
     {
         return [
             new FrameworkBundle(),
-            new ZenifyControllerAutowireBundle(),
+            new SymotionControllerAutowireBundle(),
             new AliasingBundle(),
         ];
     }

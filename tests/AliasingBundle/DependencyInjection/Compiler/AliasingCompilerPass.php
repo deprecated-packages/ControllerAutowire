@@ -1,6 +1,6 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\AliasingBundle\DependencyInjection\Compiler;
+namespace Symotion\ControllerAutowire\Tests\AliasingBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

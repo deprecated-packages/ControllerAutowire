@@ -1,11 +1,11 @@
 <?php
 
 /*
- * This file is part of Zenify
+ * This file is part of Symotion
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire\HttpKernel\Controller;
+namespace Symotion\ControllerAutowire\HttpKernel\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;

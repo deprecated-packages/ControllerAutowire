@@ -1,11 +1,11 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\DependencyInjection\Compiler;
+namespace Symotion\ControllerAutowire\Tests\DependencyInjection\Compiler;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use Zenify\ControllerAutowire\DependencyInjection\Compiler\DefaultAutowireTypesPass;
+use Symotion\ControllerAutowire\DependencyInjection\Compiler\DefaultAutowireTypesPass;
 
 final class DefaultAutowireTypesPassTest extends PHPUnit_Framework_TestCase
 {

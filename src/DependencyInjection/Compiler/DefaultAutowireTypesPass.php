@@ -1,15 +1,15 @@
 <?php
 
 /*
- * This file is part of Zenify
+ * This file is part of Symotion
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire\DependencyInjection\Compiler;
+namespace Symotion\ControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use Zenify\ControllerAutowire\Config\Definition\ConfigurationResolver;
+use Symotion\ControllerAutowire\Config\Definition\ConfigurationResolver;
 
 final class DefaultAutowireTypesPass implements CompilerPassInterface
 {

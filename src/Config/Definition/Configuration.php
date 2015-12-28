@@ -1,15 +1,15 @@
 <?php
 
 /*
- * This file is part of Zenify
+ * This file is part of Symotion
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire\Config\Definition;
+namespace Symotion\ControllerAutowire\Config\Definition;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use Zenify\ControllerAutowire\ZenifyControllerAutowireBundle;
+use Symotion\ControllerAutowire\SymotionControllerAutowireBundle;
 
 final class Configuration implements ConfigurationInterface
 {
@@ -32,7 +32,7 @@ final class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $rootNode = $treeBuilder->root(ZenifyControllerAutowireBundle::ALIAS);
+        $rootNode = $treeBuilder->root(SymotionControllerAutowireBundle::ALIAS);
 
         $rootNode->children()
             ->arrayNode('controller_dirs')

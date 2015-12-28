@@ -1,6 +1,6 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource;
+namespace Symotion\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource;
 
 class SomeService
 {

@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of Zenify
+ * This file is part of Symotion
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire\DependencyInjection;
+namespace Symotion\ControllerAutowire\DependencyInjection;
 
-use Zenify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
+use Symotion\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
 
 final class ControllerClassMap implements ControllerClassMapInterface
 {

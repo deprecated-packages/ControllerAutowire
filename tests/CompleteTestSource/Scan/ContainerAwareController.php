@@ -1,6 +1,6 @@
 <?php
 
-namespace Zenify\ControllerAutowire\Tests\CompleteTestSource\Scan;
+namespace Symotion\ControllerAutowire\Tests\CompleteTestSource\Scan;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;

@@ -1,11 +1,11 @@
 <?php
 
 /*
- * This file is part of Zenify
+ * This file is part of Symotion
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire\Contract\Config;
+namespace Symotion\ControllerAutowire\Contract\Config;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

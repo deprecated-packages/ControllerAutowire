@@ -1,28 +1,28 @@
 <?php
 
 /*
- * This file is part of Zenify
+ * This file is part of Symotion
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Zenify\ControllerAutowire;
+namespace Symotion\ControllerAutowire;
 
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Zenify\ControllerAutowire\DependencyInjection\ControllerClassMap;
-use Zenify\ControllerAutowire\DependencyInjection\Compiler\DefaultAutowireTypesPass;
-use Zenify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
-use Zenify\ControllerAutowire\DependencyInjection\Compiler\ReplaceControllerResolverPass;
-use Zenify\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
-use Zenify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use Symotion\ControllerAutowire\DependencyInjection\ControllerClassMap;
+use Symotion\ControllerAutowire\DependencyInjection\Compiler\DefaultAutowireTypesPass;
+use Symotion\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
+use Symotion\ControllerAutowire\DependencyInjection\Compiler\ReplaceControllerResolverPass;
+use Symotion\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
+use Symotion\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
 
-final class ZenifyControllerAutowireBundle extends Bundle
+final class SymotionControllerAutowireBundle extends Bundle
 {
     /**
      * @var string
      */
-    const ALIAS = 'zenify_controller_autowire';
+    const ALIAS = 'symotion_controller_autowire';
 
     /**
      * {@inheritdoc}

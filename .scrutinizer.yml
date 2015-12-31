@@ -1,13 +1,5 @@
 tools:
     external_code_coverage: true
-    php_code_sniffer:
-        config:
-            standard: "PSR2"
-    php_cs_fixer:
-        enabled: true
-        config:
-            level: "symfony"
-    php_mess_detector: true
     php_analyzer: true
     sensiolabs_security_checker: true
 

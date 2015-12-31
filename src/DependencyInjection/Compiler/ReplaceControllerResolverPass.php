@@ -1,19 +1,19 @@
 <?php
 
 /*
- * This file is part of Symotion
+ * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Symotion\ControllerAutowire\DependencyInjection\Compiler;
+namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
-use Symotion\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
-use Symotion\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
+use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
+use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
 
 final class ReplaceControllerResolverPass implements CompilerPassInterface
 {
@@ -55,8 +55,8 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
 
             $definition = $this->createDefinitionWithDecoratingResolver('old.'.$controllerResolverServiceName);
 
-            $containerBuilder->setDefinition('symotion.autowire_controller_controller_resolver', $definition);
-            $containerBuilder->setAlias($controllerResolverServiceName, new Alias('symotion.autowire_controller_controller_resolver', true));
+            $containerBuilder->setDefinition('symplify.autowire_controller_controller_resolver', $definition);
+            $containerBuilder->setAlias($controllerResolverServiceName, new Alias('symplify.autowire_controller_controller_resolver', true));
         }
     }
 

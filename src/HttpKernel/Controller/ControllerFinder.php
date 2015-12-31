@@ -1,15 +1,15 @@
 <?php
 
 /*
- * This file is part of Symotion
+ * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Symotion\ControllerAutowire\HttpKernel\Controller;
+namespace Symplify\ControllerAutowire\HttpKernel\Controller;
 
 use Nette\Caching\Storages\DevNullStorage;
 use Nette\Loaders\RobotLoader;
-use Symotion\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
+use Symplify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
 
 final class ControllerFinder implements ControllerFinderInterface
 {

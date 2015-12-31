@@ -1,11 +1,11 @@
 <?php
 
-namespace Symotion\ControllerAutowire\Tests;
+namespace Symplify\ControllerAutowire\Tests;
 
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use Symotion\ControllerAutowire\SymotionControllerAutowireBundle;
+use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class AppKernel extends Kernel
 {
@@ -16,7 +16,7 @@ final class AppKernel extends Kernel
     {
         return [
             new FrameworkBundle(),
-            new SymotionControllerAutowireBundle(),
+            new SymplifyControllerAutowireBundle(),
         ];
     }
 

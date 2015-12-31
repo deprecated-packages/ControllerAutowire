@@ -1,5 +1,5 @@
 {
-    "name": "symotion/controller-autowire",
+    "name": "symplify/controller-autowire",
     "description": "Adds support to autowire controller constructor without pain.",
     "keywords": ["Symfony", "controller", "autowire"],
     "license": "MIT",
@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Symotion\\ControllerAutowire\\": "src"
+            "Symplify\\ControllerAutowire\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Symotion\\ControllerAutowire\\Tests\\": "tests"
+            "Symplify\\ControllerAutowire\\Tests\\": "tests"
         }
     }
 }

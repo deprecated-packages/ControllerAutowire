@@ -1,11 +1,11 @@
 <?php
 
 /*
- * This file is part of Symotion
+ * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Symotion\ControllerAutowire\Contract\DependencyInjection;
+namespace Symplify\ControllerAutowire\Contract\DependencyInjection;
 
 interface ControllerClassMapInterface
 {

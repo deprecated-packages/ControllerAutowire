@@ -1,16 +1,16 @@
 <?php
 
 /*
- * This file is part of Symotion
+ * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Symotion\ControllerAutowire\Config\Definition;
+namespace Symplify\ControllerAutowire\Config\Definition;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symotion\ControllerAutowire\Contract\Config\ConfigurationResolverInterface;
-use Symotion\ControllerAutowire\SymotionControllerAutowireBundle;
+use Symplify\ControllerAutowire\Contract\Config\ConfigurationResolverInterface;
+use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class ConfigurationResolver implements ConfigurationResolverInterface
 {
@@ -26,7 +26,7 @@ final class ConfigurationResolver implements ConfigurationResolverInterface
     {
         if (!$this->resolvedConfiguration) {
             $processor = new Processor();
-            $configs = $containerBuilder->getExtensionConfig(SymotionControllerAutowireBundle::ALIAS);
+            $configs = $containerBuilder->getExtensionConfig(SymplifyControllerAutowireBundle::ALIAS);
             $configs = $processor->processConfiguration(new Configuration(), $configs);
 
             $this->resolvedConfiguration = $containerBuilder->getParameterBag()->resolveValue($configs);

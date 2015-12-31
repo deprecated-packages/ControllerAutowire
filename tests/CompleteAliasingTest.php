@@ -1,16 +1,16 @@
 <?php
 
-namespace Symotion\ControllerAutowire\Tests;
+namespace Symplify\ControllerAutowire\Tests;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Tests\Controller;
-use Symotion\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
-use Symotion\ControllerAutowire\Tests\AliasingBundle\Controller\AliasController;
-use Symotion\ControllerAutowire\Tests\CompleteTestSource\Scan\ContainerAwareController;
-use Symotion\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
-use Symotion\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService;
+use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
+use Symplify\ControllerAutowire\Tests\AliasingBundle\Controller\AliasController;
+use Symplify\ControllerAutowire\Tests\CompleteTestSource\Scan\ContainerAwareController;
+use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
+use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService;
 
 final class CompleteAliasingTest extends PHPUnit_Framework_TestCase
 {

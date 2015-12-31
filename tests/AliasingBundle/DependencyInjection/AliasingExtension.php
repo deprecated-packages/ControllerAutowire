@@ -1,6 +1,6 @@
 <?php
 
-namespace Symotion\ControllerAutowire\Tests\AliasingBundle\DependencyInjection;
+namespace Symplify\ControllerAutowire\Tests\AliasingBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

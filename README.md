@@ -1,10 +1,10 @@
 # Controller Autowire
 
-[![Build Status](https://img.shields.io/travis/Symotion/ControllerAutowire.svg?style=flat-square)](https://travis-ci.org/Symotion/ControllerAutowire)
-[![Quality Score](https://img.shields.io/scrutinizer/g/Symotion/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Symotion/ControllerAutowire)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/Symotion/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Symotion/ControllerAutowire)
-[![Downloads](https://img.shields.io/packagist/dt/symotion/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symotion/controller-autowire)
-[![Latest stable](https://img.shields.io/packagist/v/symotion/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symotion/controller-autowire)
+[![Build Status](https://img.shields.io/travis/Symplify/ControllerAutowire.svg?style=flat-square)](https://travis-ci.org/Symplify/ControllerAutowire)
+[![Quality Score](https://img.shields.io/scrutinizer/g/Symplify/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Symplify/ControllerAutowire)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/Symplify/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Symplify/ControllerAutowire)
+[![Downloads](https://img.shields.io/packagist/dt/symplify/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symplify/controller-autowire)
+[![Latest stable](https://img.shields.io/packagist/v/symplify/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symplify/controller-autowire)
 
 If you still wonder **why using controller as services**, **check few arguments** about this topic:
 
@@ -24,7 +24,7 @@ In short, it requires these 3 steps:
 ## Install
 
 ```bash
-$ composer require symotion/controller-autowire
+$ composer require symplify/controller-autowire
 ```
 
 Add bundle to `AppKernel.php`:
@@ -35,7 +35,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = [
-            new Symotion\ControllerAutowire\SymotionControllerAutowireBundle(),
+            new Symplify\ControllerAutowire\SymplifyControllerAutowireBundle(),
             // ...
         ];
     }

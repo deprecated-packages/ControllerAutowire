@@ -1,6 +1,6 @@
 <?php
 
-namespace Symotion\ControllerAutowire\Tests\AliasingBundle\HttpKernel;
+namespace Symplify\ControllerAutowire\Tests\AliasingBundle\HttpKernel;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;

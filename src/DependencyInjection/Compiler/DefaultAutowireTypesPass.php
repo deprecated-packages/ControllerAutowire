@@ -1,15 +1,15 @@
 <?php
 
 /*
- * This file is part of Symotion
+ * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Symotion\ControllerAutowire\DependencyInjection\Compiler;
+namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use Symotion\ControllerAutowire\Config\Definition\ConfigurationResolver;
+use Symplify\ControllerAutowire\Config\Definition\ConfigurationResolver;
 
 final class DefaultAutowireTypesPass implements CompilerPassInterface
 {

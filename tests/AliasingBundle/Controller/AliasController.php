@@ -1,6 +1,6 @@
 <?php
 
-namespace Symotion\ControllerAutowire\Tests\AliasingBundle\Controller;
+namespace Symplify\ControllerAutowire\Tests\AliasingBundle\Controller;
 
 final class AliasController
 {

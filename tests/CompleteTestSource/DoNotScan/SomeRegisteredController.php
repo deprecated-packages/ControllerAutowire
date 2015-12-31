@@ -1,6 +1,6 @@
 <?php
 
-namespace Symotion\ControllerAutowire\Tests\CompleteTestSource\DoNotScan;
+namespace Symplify\ControllerAutowire\Tests\CompleteTestSource\DoNotScan;
 
 final class SomeRegisteredController
 {

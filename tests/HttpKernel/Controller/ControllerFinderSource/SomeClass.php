@@ -1,6 +1,6 @@
 <?php
 
-namespace Symotion\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource;
+namespace Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource;
 
 class SomeClass
 {

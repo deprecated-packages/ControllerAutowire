@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of Symotion
+ * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Symotion\ControllerAutowire\DependencyInjection;
+namespace Symplify\ControllerAutowire\DependencyInjection;
 
-use Symotion\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
+use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
 
 final class ControllerClassMap implements ControllerClassMapInterface
 {

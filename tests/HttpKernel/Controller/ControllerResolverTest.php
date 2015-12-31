@@ -1,13 +1,13 @@
 <?php
 
-namespace Symotion\ControllerAutowire\Tests\HttpKernel\Controller;
+namespace Symplify\ControllerAutowire\Tests\HttpKernel\Controller;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
-use Symotion\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
+use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
 
 final class ControllerResolverTest extends PHPUnit_Framework_TestCase
 {

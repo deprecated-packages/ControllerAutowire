@@ -1,15 +1,15 @@
 <?php
 
 /*
- * This file is part of Symotion
+ * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Symotion\ControllerAutowire\Config\Definition;
+namespace Symplify\ControllerAutowire\Config\Definition;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use Symotion\ControllerAutowire\SymotionControllerAutowireBundle;
+use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class Configuration implements ConfigurationInterface
 {
@@ -32,7 +32,7 @@ final class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $rootNode = $treeBuilder->root(SymotionControllerAutowireBundle::ALIAS);
+        $rootNode = $treeBuilder->root(SymplifyControllerAutowireBundle::ALIAS);
 
         $rootNode->children()
             ->arrayNode('controller_dirs')

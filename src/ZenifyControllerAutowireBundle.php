@@ -1,28 +1,28 @@
 <?php
 
 /*
- * This file is part of Symotion
+ * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
  */
 
-namespace Symotion\ControllerAutowire;
+namespace Symplify\ControllerAutowire;
 
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symotion\ControllerAutowire\DependencyInjection\ControllerClassMap;
-use Symotion\ControllerAutowire\DependencyInjection\Compiler\DefaultAutowireTypesPass;
-use Symotion\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
-use Symotion\ControllerAutowire\DependencyInjection\Compiler\ReplaceControllerResolverPass;
-use Symotion\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
-use Symotion\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use Symplify\ControllerAutowire\DependencyInjection\ControllerClassMap;
+use Symplify\ControllerAutowire\DependencyInjection\Compiler\DefaultAutowireTypesPass;
+use Symplify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
+use Symplify\ControllerAutowire\DependencyInjection\Compiler\ReplaceControllerResolverPass;
+use Symplify\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
+use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
 
-final class SymotionControllerAutowireBundle extends Bundle
+final class SymplifyControllerAutowireBundle extends Bundle
 {
     /**
      * @var string
      */
-    const ALIAS = 'symotion_controller_autowire';
+    const ALIAS = 'symplify_controller_autowire';
 
     /**
      * {@inheritdoc}

@@ -1,7 +1,13 @@
+build:
+    tests:
+        override:
+            -
+                command: "phpunit --coverage-clover=clover.xml"
+                coverage:
+                    file: "clover.xml"
+                    format: "php-clover"
+
 tools:
-    php_code_coverage:
-        enabled: true
-        test_command: "vendor/bin/phpunit"
     php_code_sniffer:
         config:
             standard: "PSR2"

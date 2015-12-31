@@ -22,9 +22,5 @@ before_install:
 install:
   - composer install --prefer-source
 
-before_script:
-  - composer selfupdate
-  - composer update --prefer-dist
-
 script:
   - vendor/bin/phpunit

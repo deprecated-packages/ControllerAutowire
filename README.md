@@ -63,7 +63,7 @@ That's all :)
 # Testing
 
 ```bash
-$ phpunit
+$ vendor/bin/phpunit
 ```
 
 

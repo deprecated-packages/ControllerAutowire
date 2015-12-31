@@ -21,18 +21,10 @@ before_install:
 
 install:
   - composer install --prefer-source
-  - if [[ $TRAVIS_PHP_VERSION = '7.0' ]]; then wget http://get.sensiolabs.org/php-cs-fixer.phar -O php-cs-fixer; fi
 
 before_script:
   - composer selfupdate
   - composer update --prefer-dist
 
-before_script:
-  - if [[ $TRAVIS_PHP_VERSION = '7.0' ]]; then PHPUNIT_FLAGS="--coverage-clover coverage.xml"; fi
-  - if [[ $TRAVIS_PHP_VERSION = '7.0' ]]; then php php-cs-fixer fix . --diff --dry-run -v --level=symfony --fixers=-psr0; fi
-
 script:
-  - phpunit $PHPUNIT_FLAGS
-
-after_script:
-  - if [[ $TRAVIS_PHP_VERSION = '7.0' ]]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover coverage.xml; fi
+  - vendor/bin/phpunit

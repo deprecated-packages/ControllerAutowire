@@ -8,8 +8,8 @@
 namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Alias;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
@@ -56,7 +56,10 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
             $definition = $this->createDefinitionWithDecoratingResolver('old.'.$controllerResolverServiceName);
 
             $containerBuilder->setDefinition('symplify.autowire_controller_controller_resolver', $definition);
-            $containerBuilder->setAlias($controllerResolverServiceName, new Alias('symplify.autowire_controller_controller_resolver', true));
+            $containerBuilder->setAlias(
+                $controllerResolverServiceName,
+                new Alias('symplify.autowire_controller_controller_resolver', true)
+            );
         }
     }
 

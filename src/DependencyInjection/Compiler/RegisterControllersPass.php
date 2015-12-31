@@ -26,8 +26,10 @@ final class RegisterControllersPass implements CompilerPassInterface
      */
     private $controllerFinder;
 
-    public function __construct(ControllerClassMapInterface $controllerClassMap, ControllerFinderInterface $controllerFinder)
-    {
+    public function __construct(
+        ControllerClassMapInterface $controllerClassMap,
+        ControllerFinderInterface $controllerFinder
+    ) {
         $this->controllerClassMap = $controllerClassMap;
         $this->controllerFinder = $controllerFinder;
     }

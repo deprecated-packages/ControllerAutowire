@@ -10,10 +10,10 @@ namespace Symplify\ControllerAutowire;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symplify\ControllerAutowire\DependencyInjection\ControllerClassMap;
 use Symplify\ControllerAutowire\DependencyInjection\Compiler\DefaultAutowireTypesPass;
 use Symplify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
 use Symplify\ControllerAutowire\DependencyInjection\Compiler\ReplaceControllerResolverPass;
+use Symplify\ControllerAutowire\DependencyInjection\ControllerClassMap;
 use Symplify\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
 use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
 

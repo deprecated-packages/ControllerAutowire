@@ -18,6 +18,9 @@ final class ControllerFinder implements ControllerFinderInterface
      */
     private $namePart;
 
+    /**
+     * @param string $namePart
+     */
     public function __construct($namePart = 'Controller')
     {
         $this->namePart = $namePart;

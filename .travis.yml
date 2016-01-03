@@ -13,7 +13,7 @@ php:
 matrix:
   include:
     - php: 7.0
-      env: SYMFONY_VERSION=2.8 PHPUNIT_FLAGS="--coverage-clover coverage.clover"
+      env: SYMFONY_VERSION=2.8 PHPUNIT_FLAGS="--coverage-clover coverage.clover" CHECK_CS=true
 
 before_install:
   - if [[ "$SYMFONY_VERSION" != "" ]]; then composer require --no-update symfony/symfony:${SYMFONY_VERSION}; fi
@@ -23,6 +23,7 @@ install:
 
 script:
   - vendor/bin/phpunit $PHPUNIT_FLAGS
+  - if [[ "$CHECK_CS" != "" ]]; then vendor/bin/symplify-cs check src tests; fi
 
 after_script:
   - if [[ "$PHPUNIT_FLAGS" != "" ]]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi

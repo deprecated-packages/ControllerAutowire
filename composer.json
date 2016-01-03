@@ -14,8 +14,8 @@
     "require-dev": {
         "nette/utils": "^2.3",
         "symfony/framework-bundle": "^2.8|^3.0",
-        "phpunit/phpunit": "^5.1",
-        "symplify/coding-standard": "^0.0.1"
+        "symplify/coding-standard": "^0.1",
+        "phpunit/phpunit": "^5.1"
     },
     "autoload": {
         "psr-4": {

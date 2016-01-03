@@ -5,8 +5,8 @@ namespace Symplify\ControllerAutowire\Tests;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use Symplify\ControllerAutowire\Tests\AliasingBundle\AliasingBundle;
 use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
+use Symplify\ControllerAutowire\Tests\AliasingBundle\AliasingBundle;
 
 final class AppKernelWithAlias extends Kernel
 {

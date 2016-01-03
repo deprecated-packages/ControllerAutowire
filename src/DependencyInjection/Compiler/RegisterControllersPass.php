@@ -7,8 +7,8 @@
 
 namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symplify\ControllerAutowire\Config\Definition\ConfigurationResolver;
 use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;

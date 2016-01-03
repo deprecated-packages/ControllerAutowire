@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * This is done by JMSDiExtraBundle.
  *
- * @see https://github.com/adam187/JMSDiExtraBundle/blob/59b9745f6d02dcaee69b8a78a22119475d26273f/DependencyInjection/Compiler/IntegrationPass.php#L37
+ * @see http://git.io/vu3qZ
  *
  * And might be done by others of course.
  *

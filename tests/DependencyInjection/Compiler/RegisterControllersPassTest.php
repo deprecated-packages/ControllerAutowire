@@ -8,8 +8,8 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symplify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
 use Symplify\ControllerAutowire\DependencyInjection\ControllerClassMap;
 use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
-use Symplify\ControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource\SomeController;
 use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
+use Symplify\ControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource\SomeController;
 
 final class RegisterControllersPassTest extends PHPUnit_Framework_TestCase
 {

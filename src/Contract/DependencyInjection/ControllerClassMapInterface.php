@@ -9,11 +9,7 @@ namespace Symplify\ControllerAutowire\Contract\DependencyInjection;
 
 interface ControllerClassMapInterface
 {
-    /**
-     * @param string $id
-     * @param string $class
-     */
-    public function addController($id, $class);
+    public function addController(string $id, string $class);
 
     /**
      * @return string[]

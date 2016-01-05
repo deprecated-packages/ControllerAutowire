@@ -63,12 +63,7 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
         }
     }
 
-    /**
-     * @param ContainerBuilder $containerBuilder
-     *
-     * @return bool|string
-     */
-    private function getCurrentControllerResolverServiceName(ContainerBuilder $containerBuilder)
+    private function getCurrentControllerResolverServiceName(ContainerBuilder $containerBuilder) : string
     {
         if ($containerBuilder->hasAlias(self::CONTROLLER_RESOLVER_SERVICE_NAME)) {
             $this->isControllerResolverAliased = true;
@@ -80,12 +75,7 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
         return self::CONTROLLER_RESOLVER_SERVICE_NAME;
     }
 
-    /**
-     * @param string $controllerResolverServiceName
-     *
-     * @return Definition
-     */
-    private function createDefinitionWithDecoratingResolver($controllerResolverServiceName)
+    private function createDefinitionWithDecoratingResolver(string $controllerResolverServiceName) : Definition
     {
         $definition = new Definition(ControllerResolver::class, [
             new Reference($controllerResolverServiceName),

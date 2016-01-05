@@ -9,7 +9,7 @@ namespace Symplify\ControllerAutowire\Config\Definition;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symplify\ControllerAutowire\Contract\Config\ConfigurationResolverInterface;
+use Symplify\ControllerAutowire\Contract\Config\Definition\ConfigurationResolverInterface;
 use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class ConfigurationResolver implements ConfigurationResolverInterface

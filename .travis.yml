@@ -1,13 +1,6 @@
 language: php
 
-sudo: false
-
-cache:
-  directories:
-    - $HOME/.composer/cache
-
 php:
-  - 5.6
   - 7.0
 
 matrix:

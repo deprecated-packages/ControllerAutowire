@@ -23,6 +23,7 @@ final class Configuration implements ConfigurationInterface
      */
     private $defaultAutowireTypes = [
         'doctrine.orm.default_entity_manager' => 'Doctrine\ORM\EntityManagerInterface',
+        'event_dispatcher' => 'Symfony\Component\EventDispatcher\EventDispatcherInterface',
     ];
 
     /**

@@ -1,7 +1,5 @@
 <?php
 
-declare (strict_types = 1);
-
 /*
  * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
@@ -38,7 +36,7 @@ final class DefaultAutowireTypesPass implements CompilerPassInterface
     /**
      * @return string[]
      */
-    private function getAutowireTypes(ContainerBuilder $containerBuilder) : array
+    private function getAutowireTypes(ContainerBuilder $containerBuilder)
     {
         $config = (new ConfigurationResolver())->resolveFromContainerBuilder($containerBuilder);
 

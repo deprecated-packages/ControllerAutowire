@@ -1,7 +1,5 @@
 <?php
 
-declare (strict_types = 1);
-
 /*
  * This file is part of Symplify
  * Copyright (c) 2015 Tomas Votruba (http://tomasvotruba.cz).
@@ -20,7 +18,7 @@ final class ControllerFinder implements ControllerFinderInterface
      */
     private $namePart;
 
-    public function __construct(string $namePart = 'Controller')
+    public function __construct($namePart = 'Controller')
     {
         $this->namePart = $namePart;
     }
@@ -28,7 +26,7 @@ final class ControllerFinder implements ControllerFinderInterface
     /**
      * {@inheritdoc}
      */
-    public function findControllersInDirs(array $dirs) : array
+    public function findControllersInDirs(array $dirs)
     {
         $robot = new RobotLoader();
         $robot->setCacheStorage(new DevNullStorage());

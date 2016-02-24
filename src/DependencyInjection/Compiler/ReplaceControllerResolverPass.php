@@ -80,6 +80,7 @@ final class ReplaceControllerResolverPass implements CompilerPassInterface
 
     /**
      * @param string $controllerResolverServiceName
+     *
      * @return Definition
      */
     private function createDefinitionWithDecoratingResolver($controllerResolverServiceName)

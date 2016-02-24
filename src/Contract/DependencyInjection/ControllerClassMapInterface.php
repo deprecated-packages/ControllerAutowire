@@ -9,6 +9,10 @@ namespace Symplify\ControllerAutowire\Contract\DependencyInjection;
 
 interface ControllerClassMapInterface
 {
+    /**
+     * @param string $id
+     * @param string $class
+     */
     public function addController($id, $class);
 
     /**

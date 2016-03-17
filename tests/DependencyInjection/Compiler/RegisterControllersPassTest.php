@@ -61,7 +61,8 @@ final class RegisterControllersPassTest extends PHPUnit_Framework_TestCase
 
         $controllerDefition = new Definition(SomeController::class);
         $containerBuilder->setDefinition(
-            'symplify.controllerautowire.tests.dependencyinjection.compiler.registercontrollerspasssource.somecontroller',
+            'symplify.controllerautowire.tests.dependencyinjection.'
+                . 'compiler.registercontrollerspasssource.somecontroller',
             $controllerDefition
         );
         $this->assertCount(1, $containerBuilder->getDefinitions());

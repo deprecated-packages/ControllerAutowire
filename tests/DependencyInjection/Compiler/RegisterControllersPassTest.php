@@ -49,4 +49,26 @@ final class RegisterControllersPassTest extends PHPUnit_Framework_TestCase
         $this->assertSame(SomeController::class, $controllerDefinition->getClass());
         $this->assertTrue($controllerDefinition->isAutowired());
     }
+
+    public function testServiceDefinitionExists()
+    {
+        $containerBuilder = new ContainerBuilder();
+        $containerBuilder->prependExtensionConfig(SymplifyControllerAutowireBundle::ALIAS, [
+            'controller_dirs' => [
+                __DIR__.'/RegisterControllersPassSource',
+            ],
+        ]);
+
+        $controllerDefition = new Definition(SomeController::class);
+        $containerBuilder->setDefinition(
+            'symplify.controllerautowire.tests.dependencyinjection.compiler.registercontrollerspasssource.somecontroller',
+            $controllerDefition
+        );
+        $this->assertCount(1, $containerBuilder->getDefinitions());
+
+        $this->registerControllersPass->process($containerBuilder);
+        $this->assertCount(1, $containerBuilder->getDefinitions());
+
+        $this->assertTrue($controllerDefition->isAutowired());
+    }
 }

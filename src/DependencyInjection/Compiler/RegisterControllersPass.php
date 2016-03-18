@@ -58,7 +58,13 @@ final class RegisterControllersPass implements CompilerPassInterface
     {
         foreach ($controllers as $controller) {
             $id = $this->buildControllerIdFromClass($controller);
-            $definition = $this->buildControllerDefinitionFromClass($controller);
+
+            if (!$containerBuilder->hasDefinition($id)) {
+                $definition = $this->buildControllerDefinitionFromClass($controller);
+            } else {
+                $definition = $containerBuilder->getDefinition($id);
+                $definition->setAutowired(true);
+            }
 
             $containerBuilder->setDefinition($id, $definition);
             $this->controllerClassMap->addController($id, $controller);

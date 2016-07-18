@@ -19,7 +19,7 @@ final class ControllerClassMap implements ControllerClassMapInterface
     /**
      * {@inheritdoc}
      */
-    public function addController($id, $class)
+    public function addController(string $id, string $class)
     {
         $this->controllers[$id] = $class;
     }
@@ -27,7 +27,7 @@ final class ControllerClassMap implements ControllerClassMapInterface
     /**
      * {@inheritdoc}
      */
-    public function getControllers()
+    public function getControllers() : array
     {
         return $this->controllers;
     }

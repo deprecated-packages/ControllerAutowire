@@ -2,13 +2,13 @@
 
 namespace Symplify\ControllerAutowire\Tests\HttpKernel\Controller;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Symplify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
 use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
 use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
 use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeOtherController;
 
-final class ControllerFinderTest extends PHPUnit_Framework_TestCase
+final class ControllerFinderTest extends TestCase
 {
     /**
      * @var ControllerFinderInterface

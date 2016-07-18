@@ -2,14 +2,14 @@
 
 namespace Symplify\ControllerAutowire\Tests\HttpKernel\Controller;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
 
-final class ControllerResolverTest extends PHPUnit_Framework_TestCase
+final class ControllerResolverTest extends TestCase
 {
     /**
      * @var ControllerResolver

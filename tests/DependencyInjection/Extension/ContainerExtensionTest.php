@@ -2,14 +2,15 @@
 
 namespace Symplify\ControllerAutowire\Tests\DependencyInjection\Extension;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Symplify\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
+use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
 
-final class ContainerExtensionTest extends PHPUnit_Framework_TestCase
+final class ContainerExtensionTest extends TestCase
 {
-    public function testGetters()
+    public function testGetAlias()
     {
         $containerExtension = new ContainerExtension();
-        $this->assertNull($containerExtension->getXsdValidationBasePath());
+        $this->assertSame(SymplifyControllerAutowireBundle::ALIAS, $containerExtension->getAlias());
     }
 }

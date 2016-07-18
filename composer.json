@@ -12,10 +12,10 @@
         "symfony/yaml": "^2.8|^3.0"
     },
     "require-dev": {
-        "nette/utils": "^2.3",
-        "symfony/framework-bundle": "^2.8|^3.0",
-        "symplify/coding-standard": "^0.1",
-        "phpunit/phpunit": "^5.1"
+        "nette/utils": "^2.4",
+        "symfony/framework-bundle": "^3.0",
+        "symplify/coding-standard": "^0.3",
+        "phpunit/phpunit": "^5.4"
     },
     "autoload": {
         "psr-4": {

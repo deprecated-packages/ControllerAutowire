@@ -19,16 +19,6 @@ final class Configuration implements ConfigurationInterface
     private $defaultControllerDirs = ['%kernel.root_dir%', '%kernel.root_dir%/../src'];
 
     /**
-     * @var string[]
-     */
-    private $defaultAutowireTypes = [
-        'doctrine.orm.default_entity_manager' => 'Doctrine\ORM\EntityManagerInterface',
-        'event_dispatcher' => 'Symfony\Component\EventDispatcher\EventDispatcherInterface',
-        'database_connection' => 'Doctrine\Portability\Connection',
-        'translator' => 'Symfony\Component\Translation\TranslatorInterface',
-    ];
-
-    /**
      * {@inheritdoc}
      */
     public function getConfigTreeBuilder()
@@ -40,12 +30,6 @@ final class Configuration implements ConfigurationInterface
         $rootNode->children()
             ->arrayNode('controller_dirs')
                 ->defaultValue($this->defaultControllerDirs)
-                ->prototype('scalar')
-            ->end();
-
-        $rootNode->children()
-            ->arrayNode('autowire_types')
-                ->defaultValue($this->defaultAutowireTypes)
                 ->prototype('scalar')
             ->end();
 

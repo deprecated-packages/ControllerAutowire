@@ -2,7 +2,7 @@
 
 namespace Symplify\ControllerAutowire\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,7 +13,7 @@ use Symplify\ControllerAutowire\Tests\CompleteTestSource\Scan\ContainerAwareCont
 use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
 use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService;
 
-final class CompleteTest extends PHPUnit_Framework_TestCase
+final class CompleteTest extends TestCase
 {
     /**
      * @var ControllerResolver
@@ -26,7 +26,7 @@ final class CompleteTest extends PHPUnit_Framework_TestCase
         $kernel->boot();
 
         $this->controllerResolver = $kernel->getContainer()
-            ->get('controller_resolver');
+            ->get('default.controller_resolver');
     }
 
     public function testControllerResolver()

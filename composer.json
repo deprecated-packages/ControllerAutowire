@@ -4,16 +4,16 @@
     "keywords": ["Symfony", "controller", "autowire"],
     "license": "MIT",
     "require": {
-        "php": "~5.6|~7.0",
+        "php": "~7.0",
         "nette/robot-loader": "^2.3",
-        "symfony/config": "^2.8|^3.0",
-        "symfony/dependency-injection": "^2.8|^3.0",
-        "symfony/http-kernel": "^2.8|^3.0",
-        "symfony/yaml": "^2.8|^3.0"
+        "symfony/config": "^3.0",
+        "symfony/dependency-injection": "^3.0",
+        "symfony/http-kernel": "^3.0",
+        "symfony/yaml": "^3.0"
     },
     "require-dev": {
         "nette/utils": "^2.4",
-        "symfony/framework-bundle": "^2.8|^3.0",
+        "symfony/framework-bundle": "^3.0",
         "symplify/coding-standard": "^0.3",
         "phpunit/phpunit": "^5.4"
     },

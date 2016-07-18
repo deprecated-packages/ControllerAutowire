@@ -4,7 +4,6 @@ namespace Symplify\ControllerAutowire\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Tests\Controller;
 use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
@@ -64,12 +63,14 @@ final class CompleteTest extends TestCase
         $this->assertInstanceOf(ContainerInterface::class, $controller->getContainer());
     }
 
+    /**
+     * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
+     */
     public function testGetControllerServiceMissing()
     {
         $request = new Request();
         $request->attributes->set('_controller', 'some.missing.controller.service:someAction');
 
-        $this->setExpectedException(ServiceNotFoundException::class);
         $this->controllerResolver->getController($request);
     }
 

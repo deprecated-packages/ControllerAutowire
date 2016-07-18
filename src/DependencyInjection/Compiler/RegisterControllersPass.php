@@ -47,7 +47,7 @@ final class RegisterControllersPass implements CompilerPassInterface
     /**
      * @return string[]
      */
-    private function getControllerDirs(ContainerBuilder $containerBuilder)
+    private function getControllerDirs(ContainerBuilder $containerBuilder) : array
     {
         $config = (new ConfigurationResolver())->resolveFromContainerBuilder($containerBuilder);
 
@@ -71,22 +71,12 @@ final class RegisterControllersPass implements CompilerPassInterface
         }
     }
 
-    /**
-     * @param string $class
-     *
-     * @return string
-     */
-    private function buildControllerIdFromClass($class)
+    private function buildControllerIdFromClass(string $class) : string
     {
         return strtr(strtolower($class), ['\\' => '.']);
     }
 
-    /**
-     * @param string $class
-     *
-     * @return Definition
-     */
-    private function buildControllerDefinitionFromClass($class)
+    private function buildControllerDefinitionFromClass(string $class) : Definition
     {
         $definition = new Definition($class);
         $definition->setAutowired(true);

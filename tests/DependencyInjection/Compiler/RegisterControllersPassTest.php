@@ -2,7 +2,7 @@
 
 namespace Symplify\ControllerAutowire\Tests\DependencyInjection\Compiler;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symplify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
@@ -11,7 +11,7 @@ use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
 use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
 use Symplify\ControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource\SomeController;
 
-final class RegisterControllersPassTest extends PHPUnit_Framework_TestCase
+final class RegisterControllersPassTest extends TestCase
 {
     /**
      * @var RegisterControllersPass

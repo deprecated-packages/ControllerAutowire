@@ -2,7 +2,7 @@
 
 namespace Symplify\ControllerAutowire\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Tests\Controller;
@@ -12,7 +12,7 @@ use Symplify\ControllerAutowire\Tests\CompleteTestSource\Scan\ContainerAwareCont
 use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
 use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService;
 
-final class CompleteAliasingTest extends PHPUnit_Framework_TestCase
+final class CompleteAliasingTest extends TestCase
 {
     /**
      * @var ControllerResolver

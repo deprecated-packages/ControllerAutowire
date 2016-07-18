@@ -81,7 +81,7 @@ final class ControllerResolver implements ControllerResolverInterface
     /**
      * @return object
      */
-    private function getControllerService($class)
+    private function getControllerService(string $class)
     {
         $serviceName = $this->controllerClassMap[$class];
 
@@ -105,7 +105,7 @@ final class ControllerResolver implements ControllerResolverInterface
     /**
      * @return string[]
      */
-    private function splitControllerClassAndMethod($controllerName)
+    private function splitControllerClassAndMethod(string $controllerName) : array
     {
         if (false !== strpos($controllerName, '::')) {
             return explode('::', $controllerName, 2);

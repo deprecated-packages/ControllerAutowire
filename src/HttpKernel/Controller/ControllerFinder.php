@@ -18,10 +18,7 @@ final class ControllerFinder implements ControllerFinderInterface
      */
     private $namePart;
 
-    /**
-     * @param string $namePart
-     */
-    public function __construct($namePart = 'Controller')
+    public function __construct(string $namePart = 'Controller')
     {
         $this->namePart = $namePart;
     }
@@ -29,7 +26,7 @@ final class ControllerFinder implements ControllerFinderInterface
     /**
      * {@inheritdoc}
      */
-    public function findControllersInDirs(array $dirs)
+    public function findControllersInDirs(array $dirs) : array
     {
         $robot = new RobotLoader();
         $robot->setCacheStorage(new DevNullStorage());

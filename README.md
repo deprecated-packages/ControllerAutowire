@@ -6,25 +6,21 @@
 [![Downloads](https://img.shields.io/packagist/dt/symplify/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symplify/controller-autowire)
 [![Latest stable](https://img.shields.io/packagist/v/symplify/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symplify/controller-autowire)
 
-If you still wonder **why using controller as services**, **check few arguments** about this topic:
 
-- [Richar Miller - Symfony2: Controller as Service](http://richardmiller.co.uk/2011/04/15/symfony2-controller-as-service)
-- [Matthias Noback - How to create framework independent controllers](http://php-and-symfony.matthiasnoback.nl/2014/06/how-to-create-framework-independent-controllers/)
- 
-Later, you would [find tutorials, how to do it](http://stackoverflow.com/a/31366589/1348344).
+This bundle does only 2 things. But does them well:
 
-In short, it requires these 3 steps: 
+- **1. registers controllers as services and**
+- **2. enables contstructor autowiring for them**
 
-- @Route service annotations
-- custom syntax for routes
-- explicit controller service registration
 
-**This bundle removes these steps** and **enables controllers as service** for you. 
+Still wondering **why use controller as services**? Check [this](http://richardmiller.co.uk/2011/04/15/symfony2-controller-as-service) and
+[this](http://php-and-symfony.matthiasnoback.nl/2014/06/how-to-create-framework-independent-controllers/) article.
+
 
 ## Install
 
 ```bash
-$ composer require symplify/controller-autowire
+composer require symplify/controller-autowire
 ```
 
 Add bundle to `AppKernel.php`:
@@ -46,7 +42,7 @@ class AppKernel extends Kernel
 ## Usage
 
 ```php
-class SomeController // ...
+class SomeController
 {
     private $someClass;
 
@@ -63,7 +59,8 @@ That's all :)
 # Testing
 
 ```bash
-$ vendor/bin/phpunit
+vendor/bin/symplify-cs check src tests
+vendor/bin/phpunit
 ```
 
 

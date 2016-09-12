@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  *
  * And might be done by others of course.
  *
- * It disables decoration for controller_resolver.
+ * It disables decoration for controller_resolver
  */
 final class AliasingCompilerPass implements CompilerPassInterface
 {

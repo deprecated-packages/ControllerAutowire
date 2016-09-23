@@ -10,6 +10,7 @@ namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
 use Symplify\ControllerAutowire\Config\Definition\ConfigurationResolver;
 use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
 use Symplify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
@@ -66,6 +67,8 @@ final class RegisterControllersPass implements CompilerPassInterface
                 $definition->setAutowired(true);
             }
 
+            $definition = $this->injectDependencies($definition);
+
             $containerBuilder->setDefinition($id, $definition);
             $this->controllerClassMap->addController($id, $controller);
         }
@@ -80,6 +83,20 @@ final class RegisterControllersPass implements CompilerPassInterface
     {
         $definition = new Definition($class);
         $definition->setAutowired(true);
+
+        return $definition;
+    }
+
+
+    /**
+     * @param Definition $definition
+     * @return Definition
+     */
+    private function injectDependencies(Definition $definition) : Definition
+    {
+        if (method_exists($definition->getClass(), 'setDoctrineRegistry')) {
+            $definition->addMethodCall('setDoctrineRegistry', [new Reference('doctrine')]);
+        }
 
         return $definition;
     }

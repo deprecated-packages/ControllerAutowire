@@ -10,11 +10,12 @@ namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
 use Symplify\ControllerAutowire\Config\Definition\ConfigurationResolver;
 use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
 use Symplify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
 
-final class RegisterControllersPass implements CompilerPassInterface
+final class InjectDependenciesPass implements CompilerPassInterface
 {
     /**
      * @var ControllerClassMapInterface
@@ -41,7 +42,7 @@ final class RegisterControllersPass implements CompilerPassInterface
     {
         $controllerDirs = $this->getControllerDirs($containerBuilder);
         $controllers = $this->controllerFinder->findControllersInDirs($controllerDirs);
-        $this->registerControllersToContainerBuilder($controllers, $containerBuilder);
+        $this->injectDependenciesToController($controllers, $containerBuilder);
     }
 
     /**
@@ -54,20 +55,12 @@ final class RegisterControllersPass implements CompilerPassInterface
         return $config['controller_dirs'];
     }
 
-    private function registerControllersToContainerBuilder(array $controllers, ContainerBuilder $containerBuilder)
+    private function injectDependenciesToController(array $controllers, ContainerBuilder $containerBuilder)
     {
         foreach ($controllers as $controller) {
             $id = $this->buildControllerIdFromClass($controller);
-
-            if (!$containerBuilder->hasDefinition($id)) {
-                $definition = $this->buildControllerDefinitionFromClass($controller);
-            } else {
-                $definition = $containerBuilder->getDefinition($id);
-                $definition->setAutowired(true);
-            }
-
-            $containerBuilder->setDefinition($id, $definition);
-            $this->controllerClassMap->addController($id, $controller);
+            $controllerDefinition = $containerBuilder->findDefinition($id);
+            $this->injectDependencies($controllerDefinition);
         }
     }
 
@@ -76,10 +69,18 @@ final class RegisterControllersPass implements CompilerPassInterface
         return strtr(strtolower($class), ['\\' => '.']);
     }
 
-    private function buildControllerDefinitionFromClass(string $class) : Definition
+    /**
+     * @param Definition $definition
+     *
+     * @return Definition
+     */
+    private function injectDependencies(Definition $definition) : Definition
     {
-        $definition = new Definition($class);
-        $definition->setAutowired(true);
+        if (method_exists($definition->getClass(), 'setDoctrineRegistry')) {
+            //        if (array_key_exists('Symplify\ControllerAutowire\DependencyInjection\ControllerAwareTrait',
+//            class_uses($definition->getClass()))) {
+            $definition->addMethodCall('setDoctrineRegistry', [new Reference('doctrine')]);
+        }
 
         return $definition;
     }

@@ -10,6 +10,7 @@ namespace Symplify\ControllerAutowire;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symplify\ControllerAutowire\DependencyInjection\Compiler\InjectDependenciesPass;
 use Symplify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
 use Symplify\ControllerAutowire\DependencyInjection\Compiler\ReplaceControllerResolverPass;
 use Symplify\ControllerAutowire\DependencyInjection\ControllerClassMap;
@@ -33,6 +34,7 @@ final class SymplifyControllerAutowireBundle extends Bundle
 
         $container->addCompilerPass(new RegisterControllersPass($controllerClassMap, $controllerFinder));
         $container->addCompilerPass(new ReplaceControllerResolverPass($controllerClassMap), PassConfig::TYPE_OPTIMIZE);
+        $container->addCompilerPass(new InjectDependenciesPass($controllerClassMap, $controllerFinder));
     }
 
     /**

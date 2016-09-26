@@ -12,25 +12,18 @@ use LogicException;
 
 trait DoctrineAwareTrait
 {
-
     /**
      * @var Registry
      */
     protected $doctrineRegistry;
 
-
-    /**
-     * @param Registry $doctrineRegistry
-     */
     public function setDoctrineRegistry(Registry $doctrineRegistry)
     {
         $this->doctrineRegistry = $doctrineRegistry;
     }
 
     /**
-     * Shortcut to return the Doctrine EntityManager
-     *
-     * @return Registry
+     * Shortcut to return the Doctrine EntityManager.
      *
      * @throws LogicException If DoctrineBundle is not available
      */

@@ -9,6 +9,5 @@ namespace Symplify\ControllerAutowire\DependencyInjection;
 
 trait ControllerAwareTrait
 {
-
     use DoctrineAwareTrait;
 }

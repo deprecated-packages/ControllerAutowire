@@ -1,4 +1,10 @@
-# Controller Autowire
+# Controller Autowire - Deprecated, in core of Symfony 3.3+
+
+- https://github.com/symfony/symfony/pull/22157
+- https://github.com/symfony/symfony/pull/21289
+
+
+---
 
 [![Build Status](https://img.shields.io/travis/Symplify/ControllerAutowire/master.svg?style=flat-square)](https://travis-ci.org/Symplify/ControllerAutowire)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/Symplify/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Symplify/ControllerAutowire)

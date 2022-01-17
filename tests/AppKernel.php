@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests;
 
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
+use TomasVotruba\SymfonyLegacyControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class AppKernel extends Kernel
 {

@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Config\Definition;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Config\Definition;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
+use TomasVotruba\SymfonyLegacyControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class ConfigurationResolver
 {

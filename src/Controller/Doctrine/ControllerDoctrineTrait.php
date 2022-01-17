@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Controller\Doctrine;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Doctrine;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 

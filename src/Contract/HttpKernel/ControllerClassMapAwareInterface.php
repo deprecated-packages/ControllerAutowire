@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Contract\HttpKernel;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Contract\HttpKernel;
 
 interface ControllerClassMapAwareInterface
 {

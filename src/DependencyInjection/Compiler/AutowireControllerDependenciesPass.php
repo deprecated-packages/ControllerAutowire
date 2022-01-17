@@ -1,21 +1,21 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
-use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
-use Symplify\ControllerAutowire\Controller\ControllerTrait;
-use Symplify\ControllerAutowire\Controller\Doctrine\ControllerDoctrineTrait;
-use Symplify\ControllerAutowire\Controller\Form\ControllerFormTrait;
-use Symplify\ControllerAutowire\Controller\HttpKernel\ControllerHttpKernelTrait;
-use Symplify\ControllerAutowire\Controller\Routing\ControllerRoutingTrait;
-use Symplify\ControllerAutowire\Controller\Security\ControllerSecurityTrait;
-use Symplify\ControllerAutowire\Controller\Serializer\ControllerSerializerTrait;
-use Symplify\ControllerAutowire\Controller\Session\ControllerFlashTrait;
-use Symplify\ControllerAutowire\Controller\Templating\ControllerRenderTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\ControllerTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Doctrine\ControllerDoctrineTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Form\ControllerFormTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\HttpKernel\ControllerHttpKernelTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Routing\ControllerRoutingTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Security\ControllerSecurityTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Serializer\ControllerSerializerTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Session\ControllerFlashTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Templating\ControllerRenderTrait;
 
 final class AutowireControllerDependenciesPass implements CompilerPassInterface
 {

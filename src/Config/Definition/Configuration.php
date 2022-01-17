@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Config\Definition;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Config\Definition;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
+use TomasVotruba\SymfonyLegacyControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class Configuration implements ConfigurationInterface
 {

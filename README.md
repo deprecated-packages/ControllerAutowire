@@ -1,21 +1,14 @@
-# Controller Autowire - Deprecated, in core of Symfony 3.3+
-
-- https://github.com/symfony/symfony/pull/22157
-- https://github.com/symfony/symfony/pull/21289
-
+# Controller Autowire for Symfony 2.8-3.2
 
 ---
 
 [![Build Status](https://img.shields.io/travis/Symplify/ControllerAutowire/master.svg?style=flat-square)](https://travis-ci.org/Symplify/ControllerAutowire)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/Symplify/ControllerAutowire.svg?style=flat-square)](https://scrutinizer-ci.com/g/Symplify/ControllerAutowire)
-[![Downloads](https://img.shields.io/packagist/dt/symplify/controller-autowire.svg?style=flat-square)](https://packagist.org/packages/symplify/controller-autowire)
 
+This bundle does only 2 things:
 
-This bundle does only 2 things. But does them well:
-
-- **1. registers controllers as services and**
+- **1. registers controllers as services**
 - **2. enables constructor autowiring for them**
-
 
 Still wondering **why use controller as services**? Check [this](http://richardmiller.co.uk/2011/04/15/symfony2-controller-as-service) and
 [this](http://php-and-symfony.matthiasnoback.nl/2014/06/how-to-create-framework-independent-controllers/) article.
@@ -23,7 +16,7 @@ Still wondering **why use controller as services**? Check [this](http://richardm
 ## Install
 
 ```bash
-composer require symplify/controller-autowire
+composer require tomasvotruba/symfony-legacy-controller-autowire
 ```
 
 Add bundle to `AppKernel.php`:
@@ -34,7 +27,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = [
-            new Symplify\ControllerAutowire\SymplifyControllerAutowireBundle(),
+            new TomasVotruba\SymfonyLegacyControllerAutowire\SymplifyControllerAutowireBundle(),
             // ...
         ];
     }
@@ -62,7 +55,7 @@ class SomeController
 Inspired by [pull](https://github.com/symfony/symfony/pull/18193) [requests](https://github.com/symfony/symfony/pull/20493) to Symfony and setter injection that are currently on-hold, **here are the traits you can use right now**:
 
 ```php
-use Symplify\ControllerAutowire\Controller\Routing\ControllerAwareTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Routing\ControllerAwareTrait;
 
 final class SomeController
 {
@@ -82,7 +75,7 @@ final class SomeController
 ### Do you prefer only traits you use?
  
 ```php
-use Symplify\ControllerAutowire\Controller\Routing\ControllerRoutingTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Routing\ControllerRoutingTrait;
 
 final class SomeController
 {

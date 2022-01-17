@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\DependencyInjection\Compiler;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\DependencyInjection\Compiler;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use Symplify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
-use Symplify\ControllerAutowire\DependencyInjection\ControllerClassMap;
-use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
-use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
-use Symplify\ControllerAutowire\Tests\CompleteTestSource\Scan\AlreadyRegisteredController;
-use Symplify\ControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource\SomeController;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\ControllerClassMap;
+use TomasVotruba\SymfonyLegacyControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use TomasVotruba\SymfonyLegacyControllerAutowire\SymplifyControllerAutowireBundle;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Tests\CompleteTestSource\Scan\AlreadyRegisteredController;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Tests\DependencyInjection\Compiler\RegisterControllersPassSource\SomeController;
 
 final class RegisterControllersPassTest extends TestCase
 {

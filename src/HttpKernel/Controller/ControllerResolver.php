@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\HttpKernel\Controller;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\HttpKernel\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
-use Symplify\ControllerAutowire\Contract\HttpKernel\ControllerClassMapAwareInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\HttpKernel\ControllerClassMapAwareInterface;
 
 final class ControllerResolver implements ControllerResolverInterface, ControllerClassMapAwareInterface
 {

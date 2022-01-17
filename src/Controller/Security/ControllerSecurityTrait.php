@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Controller\Security;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Security;
 
 use Nette\Security\User;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;

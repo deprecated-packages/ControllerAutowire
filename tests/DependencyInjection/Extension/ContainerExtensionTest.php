@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\DependencyInjection\Extension;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\DependencyInjection\Extension;
 
 use PHPUnit\Framework\TestCase;
-use Symplify\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
-use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Extension\ContainerExtension;
+use TomasVotruba\SymfonyLegacyControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class ContainerExtensionTest extends TestCase
 {

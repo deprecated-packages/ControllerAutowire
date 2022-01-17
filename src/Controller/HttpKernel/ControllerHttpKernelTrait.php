@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Controller\HttpKernel;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\HttpKernel;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;

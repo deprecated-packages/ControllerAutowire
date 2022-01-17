@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\DependencyInjection;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection;
 
-use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
 
 final class ControllerClassMap implements ControllerClassMapInterface
 {

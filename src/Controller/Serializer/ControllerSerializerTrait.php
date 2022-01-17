@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Controller\Serializer;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Serializer;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\SerializerInterface;

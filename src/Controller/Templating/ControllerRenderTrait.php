@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Controller\Templating;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Templating;
 
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Response;

@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\CompleteTestSource\Scan;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\CompleteTestSource\Scan;
 
-use Symplify\ControllerAutowire\Controller\ControllerTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\ControllerTrait;
 
 final class TraitAwareController
 {

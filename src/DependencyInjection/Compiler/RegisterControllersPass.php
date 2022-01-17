@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler;
 
 use Nette\Utils\Strings;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use Symplify\ControllerAutowire\Config\Definition\ConfigurationResolver;
-use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
-use Symplify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Config\Definition\ConfigurationResolver;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
 
 final class RegisterControllersPass implements CompilerPassInterface
 {

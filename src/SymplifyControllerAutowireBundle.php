@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symplify\ControllerAutowire\DependencyInjection\Compiler\AutowireControllerDependenciesPass;
-use Symplify\ControllerAutowire\DependencyInjection\Compiler\DecorateControllerResolverPass;
-use Symplify\ControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
-use Symplify\ControllerAutowire\DependencyInjection\ControllerClassMap;
-use Symplify\ControllerAutowire\DependencyInjection\Extension\ContainerExtension;
-use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler\AutowireControllerDependenciesPass;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler\DecorateControllerResolverPass;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler\RegisterControllersPass;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\ControllerClassMap;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Extension\ContainerExtension;
+use TomasVotruba\SymfonyLegacyControllerAutowire\HttpKernel\Controller\ControllerFinder;
 
 final class SymplifyControllerAutowireBundle extends Bundle
 {

@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\DependencyInjection\Compiler;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\DependencyInjection\Compiler;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symplify\ControllerAutowire\DependencyInjection\Compiler\DecorateControllerResolverPass;
-use Symplify\ControllerAutowire\DependencyInjection\ControllerClassMap;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler\DecorateControllerResolverPass;
+use TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\ControllerClassMap;
 
 final class DecorateControllerResolverPassTest extends TestCase
 {

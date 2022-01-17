@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\DependencyInjection\Extension;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symplify\ControllerAutowire\SymplifyControllerAutowireBundle;
+use TomasVotruba\SymfonyLegacyControllerAutowire\SymplifyControllerAutowireBundle;
 
 final class ContainerExtension extends Extension
 {

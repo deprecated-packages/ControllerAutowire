@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\PHPUnit\Listener;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\PHPUnit\Listener;
 
 use Nette\Utils\FileSystem;
 use Nette\Utils\Finder;

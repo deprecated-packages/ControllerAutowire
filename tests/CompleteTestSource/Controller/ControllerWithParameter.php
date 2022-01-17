@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\CompleteTestSource\Controller;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\CompleteTestSource\Controller;
 
 final class ControllerWithParameter
 {

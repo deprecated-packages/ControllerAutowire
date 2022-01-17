@@ -4,15 +4,15 @@ parameters:
 
 services:
     some.service:
-        class: Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService
+        class: TomasVotruba\SymfonyLegacyControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeService
     some.controller.service:
-        class: Symplify\ControllerAutowire\Tests\CompleteTestSource\DoNotScan\SomeRegisteredController
+        class: TomasVotruba\SymfonyLegacyControllerAutowire\Tests\CompleteTestSource\DoNotScan\SomeRegisteredController
     some.controller.with_parameter:
-        class: Symplify\ControllerAutowire\Tests\CompleteTestSource\Controller\ControllerWithParameter
+        class: TomasVotruba\SymfonyLegacyControllerAutowire\Tests\CompleteTestSource\Controller\ControllerWithParameter
         arguments:
             - "%kernel.root_dir%"
     already_registered_controller:
-        class: Symplify\ControllerAutowire\Tests\CompleteTestSource\Scan\AlreadyRegisteredController
+        class: TomasVotruba\SymfonyLegacyControllerAutowire\Tests\CompleteTestSource\Scan\AlreadyRegisteredController
 
 symplify_controller_autowire:
     controller_dirs:

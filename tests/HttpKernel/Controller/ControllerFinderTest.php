@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\HttpKernel\Controller;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\HttpKernel\Controller;
 
 use PHPUnit\Framework\TestCase;
-use Symplify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
-use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerFinder;
-use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
-use Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeOtherController;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\HttpKernel\Controller\ControllerFinder;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeController;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource\SomeOtherController;
 
 final class ControllerFinderTest extends TestCase
 {

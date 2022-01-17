@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Controller\Routing;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Routing;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

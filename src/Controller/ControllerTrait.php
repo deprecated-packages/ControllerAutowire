@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Controller;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller;
 
-use Symplify\ControllerAutowire\Controller\Doctrine\ControllerDoctrineTrait;
-use Symplify\ControllerAutowire\Controller\Form\ControllerFormTrait;
-use Symplify\ControllerAutowire\Controller\HttpKernel\ControllerHttpKernelTrait;
-use Symplify\ControllerAutowire\Controller\Routing\ControllerRoutingTrait;
-use Symplify\ControllerAutowire\Controller\Security\ControllerSecurityTrait;
-use Symplify\ControllerAutowire\Controller\Serializer\ControllerSerializerTrait;
-use Symplify\ControllerAutowire\Controller\Session\ControllerFlashTrait;
-use Symplify\ControllerAutowire\Controller\Templating\ControllerRenderTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Doctrine\ControllerDoctrineTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Form\ControllerFormTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\HttpKernel\ControllerHttpKernelTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Routing\ControllerRoutingTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Security\ControllerSecurityTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Serializer\ControllerSerializerTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Session\ControllerFlashTrait;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Templating\ControllerRenderTrait;
 
 trait ControllerTrait
 {

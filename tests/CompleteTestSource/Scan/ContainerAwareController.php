@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\CompleteTestSource\Scan;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\CompleteTestSource\Scan;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;

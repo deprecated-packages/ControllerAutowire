@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Controller\Form;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Form;
 
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormBuilderInterface;

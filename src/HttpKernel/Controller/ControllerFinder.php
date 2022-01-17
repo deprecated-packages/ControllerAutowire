@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\HttpKernel\Controller;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\HttpKernel\Controller;
 
 use Nette\Loaders\RobotLoader;
-use Symplify\ControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\HttpKernel\ControllerFinderInterface;
 
 final class ControllerFinder implements ControllerFinderInterface
 {

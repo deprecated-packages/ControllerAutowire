@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\DependencyInjection\Compiler;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
-use Symplify\ControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
-use Symplify\ControllerAutowire\HttpKernel\Controller\ControllerResolver;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\DependencyInjection\ControllerClassMapInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\HttpKernel\Controller\ControllerResolver;
 
 final class DecorateControllerResolverPass implements CompilerPassInterface
 {

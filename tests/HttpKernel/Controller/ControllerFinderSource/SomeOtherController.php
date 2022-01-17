@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Symplify\ControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource;
+namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\HttpKernel\Controller\ControllerFinderSource;
 
 class SomeOtherController
 {

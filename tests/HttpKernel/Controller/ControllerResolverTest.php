@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\HttpKernel\Controller;
 
@@ -24,7 +26,7 @@ final class ControllerResolverTest extends TestCase
     public function testGetController(): void
     {
         $attributes = [
-            '_controller' => 'SomeController::someAction'
+            '_controller' => 'SomeController::someAction',
         ];
         $request = new Request([], [], $attributes);
 
@@ -35,7 +37,7 @@ final class ControllerResolverTest extends TestCase
     public function testGetArguments(): void
     {
         $this->assertNull(
-            $this->controllerResolver->getArguments(new Request, 'missing')
+            $this->controllerResolver->getArguments(new Request(), 'missing')
         );
     }
 

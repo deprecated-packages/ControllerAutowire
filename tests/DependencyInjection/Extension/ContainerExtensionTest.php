@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\DependencyInjection\Extension;
 
@@ -10,7 +12,7 @@ final class ContainerExtensionTest extends TestCase
 {
     public function testGetAlias(): void
     {
-        $containerExtension = new ContainerExtension;
+        $containerExtension = new ContainerExtension();
         $this->assertSame(SymplifyControllerAutowireBundle::ALIAS, $containerExtension->getAlias());
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\DependencyInjection\Compiler;
 
@@ -55,7 +57,7 @@ final class RegisterControllersPass implements CompilerPassInterface
      */
     private function getControllerDirs(): array
     {
-        $config = (new ConfigurationResolver)->resolveFromContainerBuilder($this->containerBuilder);
+        $config = (new ConfigurationResolver())->resolveFromContainerBuilder($this->containerBuilder);
 
         return $config['controller_dirs'];
     }

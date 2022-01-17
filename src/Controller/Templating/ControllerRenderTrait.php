@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Templating;
 
@@ -51,7 +53,7 @@ trait ControllerRenderTrait
         }
 
         if ($response === null) {
-            $response = new Response;
+            $response = new Response();
         }
 
         return $response->setContent($this->twig->render($view, $parameters));

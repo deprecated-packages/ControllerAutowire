@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Config\Definition;
 
@@ -15,14 +17,14 @@ final class Configuration implements ConfigurationInterface
 
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder;
+        $treeBuilder = new TreeBuilder();
 
         $rootNode = $treeBuilder->root(SymplifyControllerAutowireBundle::ALIAS);
 
         $rootNode->children()
             ->arrayNode('controller_dirs')
-                ->defaultValue($this->defaultControllerDirs)
-                ->prototype('scalar')
+            ->defaultValue($this->defaultControllerDirs)
+            ->prototype('scalar')
             ->end();
 
         return $treeBuilder;

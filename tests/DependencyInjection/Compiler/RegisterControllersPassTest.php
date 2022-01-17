@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\DependencyInjection\Compiler;
 
@@ -21,16 +23,16 @@ final class RegisterControllersPassTest extends TestCase
 
     protected function setUp(): void
     {
-        $controllerClassMap = new ControllerClassMap;
+        $controllerClassMap = new ControllerClassMap();
         $controllerClassMap->addController('somecontroller', 'SomeController');
 
-        $controllerFinder = new ControllerFinder;
+        $controllerFinder = new ControllerFinder();
         $this->registerControllersPass = new RegisterControllersPass($controllerClassMap, $controllerFinder);
     }
 
     public function testProcess(): void
     {
-        $containerBuilder = new ContainerBuilder;
+        $containerBuilder = new ContainerBuilder();
         $this->assertCount(0, $containerBuilder->getDefinitions());
 
         $containerBuilder->prependExtensionConfig(SymplifyControllerAutowireBundle::ALIAS, [
@@ -53,7 +55,7 @@ final class RegisterControllersPassTest extends TestCase
 
     public function testServiceDefinitionExists(): void
     {
-        $containerBuilder = new ContainerBuilder;
+        $containerBuilder = new ContainerBuilder();
         $containerBuilder->prependExtensionConfig(SymplifyControllerAutowireBundle::ALIAS, [
             'controller_dirs' => [
                 __DIR__ . '/RegisterControllersPassSource',
@@ -79,7 +81,7 @@ final class RegisterControllersPassTest extends TestCase
      */
     public function testPreventDuplicatedControllerRegistration(): void
     {
-        $containerBuilder = new ContainerBuilder;
+        $containerBuilder = new ContainerBuilder();
         $containerBuilder->prependExtensionConfig(SymplifyControllerAutowireBundle::ALIAS, [
             'controller_dirs' => [
                 __DIR__ . '/../../CompleteTestSource/Scan',

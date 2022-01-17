@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Controller\Security;
 
@@ -53,7 +55,6 @@ trait ControllerSecurityTrait
     /**
      * @param mixed  $attributes
      * @param mixed  $object
-     * @param string $message
      */
     protected function denyAccessUnlessGranted($attributes, $object = null, string $message = 'Access Denied.'): void
     {

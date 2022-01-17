@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\DependencyInjection\Compiler;
 
@@ -16,12 +18,12 @@ final class DecorateControllerResolverPassTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->controllerClassMap = new ControllerClassMap;
+        $this->controllerClassMap = new ControllerClassMap();
     }
 
     public function testInjectionOfOldDecoratedService(): void
     {
-        $containerBuilder = new ContainerBuilder;
+        $containerBuilder = new ContainerBuilder();
 
         $resolver = new DecorateControllerResolverPass($this->controllerClassMap);
         $resolver->process($containerBuilder);

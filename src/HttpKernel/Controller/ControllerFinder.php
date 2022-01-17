@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\HttpKernel\Controller;
 
@@ -23,7 +25,7 @@ final class ControllerFinder implements ControllerFinderInterface
      */
     public function findControllersInDirs(array $dirs): array
     {
-        $robot = new RobotLoader;
+        $robot = new RobotLoader();
         foreach ($dirs as $dir) {
             $robot->addDirectory($dir);
         }
@@ -45,7 +47,9 @@ final class ControllerFinder implements ControllerFinderInterface
     {
         $controllerClassesWithKeys = [];
         foreach ($controllerClasses as $key => $controllerClass) {
-            $key = strtr(strtolower($controllerClass), ['\\' => '.']);
+            $key = strtr(strtolower($controllerClass), [
+                '\\' => '.',
+            ]);
             $controllerClassesWithKeys[$key] = $controllerClass;
         }
 

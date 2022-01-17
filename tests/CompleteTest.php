@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests;
 
@@ -25,7 +27,7 @@ final class CompleteTest extends TestCase
 
     protected function setUp(): void
     {
-        $kernel = new AppKernel;
+        $kernel = new AppKernel();
         $kernel->boot();
 
         $container = $kernel->getContainer();
@@ -34,7 +36,7 @@ final class CompleteTest extends TestCase
 
     public function testMissingControllerParameter(): void
     {
-        $request = new Request;
+        $request = new Request();
         /** @var bool $controller */
         $controller = $this->controllerResolver->getController($request);
         $this->assertFalse($controller);
@@ -113,7 +115,7 @@ final class CompleteTest extends TestCase
     private function createRequestWithControllerAttribute(string $controllerAttribute): Request
     {
         $attributes = [
-            '_controller' => $controllerAttribute
+            '_controller' => $controllerAttribute,
         ];
 
         return new Request([], [], $attributes);

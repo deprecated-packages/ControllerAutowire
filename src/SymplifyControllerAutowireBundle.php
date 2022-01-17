@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire;
 
@@ -20,15 +22,15 @@ final class SymplifyControllerAutowireBundle extends Bundle
 
     public function build(ContainerBuilder $containerBuilder): void
     {
-        $controllerClassMap = new ControllerClassMap;
+        $controllerClassMap = new ControllerClassMap();
 
-        $containerBuilder->addCompilerPass(new RegisterControllersPass($controllerClassMap, new ControllerFinder));
+        $containerBuilder->addCompilerPass(new RegisterControllersPass($controllerClassMap, new ControllerFinder()));
         $containerBuilder->addCompilerPass(new AutowireControllerDependenciesPass($controllerClassMap));
         $containerBuilder->addCompilerPass(new DecorateControllerResolverPass($controllerClassMap));
     }
 
     public function createContainerExtension(): ContainerExtension
     {
-        return new ContainerExtension;
+        return new ContainerExtension();
     }
 }

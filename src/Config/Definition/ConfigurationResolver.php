@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Config\Definition;
 
@@ -19,9 +21,9 @@ final class ConfigurationResolver
     public function resolveFromContainerBuilder(ContainerBuilder $containerBuilder): array
     {
         if (! $this->resolvedConfiguration) {
-            $processor = new Processor;
+            $processor = new Processor();
             $configs = $containerBuilder->getExtensionConfig(SymplifyControllerAutowireBundle::ALIAS);
-            $configs = $processor->processConfiguration(new Configuration, $configs);
+            $configs = $processor->processConfiguration(new Configuration(), $configs);
 
             $this->resolvedConfiguration = $containerBuilder->getParameterBag()->resolveValue($configs);
         }

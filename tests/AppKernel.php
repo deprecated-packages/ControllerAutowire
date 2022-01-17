@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests;
 
@@ -21,8 +23,8 @@ final class AppKernel extends Kernel
     public function registerBundles(): array
     {
         return [
-            new FrameworkBundle,
-            new SymplifyControllerAutowireBundle,
+            new FrameworkBundle(),
+            new SymplifyControllerAutowireBundle(),
         ];
     }
 

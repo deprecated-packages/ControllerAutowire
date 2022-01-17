@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\HttpKernel\Controller;
 
@@ -8,6 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use TomasVotruba\SymfonyLegacyControllerAutowire\Contract\HttpKernel\ControllerClassMapAwareInterface;
+use TomasVotruba\SymfonyLegacyControllerAutowire\Exception\ShouldNotHappenException;
 
 final class ControllerResolver implements ControllerResolverInterface, ControllerClassMapAwareInterface
 {
@@ -54,9 +57,11 @@ final class ControllerResolver implements ControllerResolverInterface, Controlle
      */
     public function getController(Request $request)
     {
-        if (! $controllerName = $request->get('_controller')) {
+        $controllerName = $request->get('_controller');
+        if (! is_string($controllerName)) {
             return false;
         }
+
         [$class, $method] = $this->splitControllerClassAndMethod($controllerName);
 
         if (! isset($this->controllerClassMap[$class])) {
@@ -70,7 +75,6 @@ final class ControllerResolver implements ControllerResolverInterface, Controlle
     }
 
     /**
-     * @param Request $request
      * @param callable $controller
      * @return string[]|null
      */
@@ -117,5 +121,7 @@ final class ControllerResolver implements ControllerResolverInterface, Controlle
         } elseif (strpos($controllerName, ':') !== false) {
             return explode(':', $controllerName, 2);
         }
+
+        throw new ShouldNotHappenException();
     }
 }

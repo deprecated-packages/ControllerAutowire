@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace TomasVotruba\SymfonyLegacyControllerAutowire\Tests\HttpKernel\Controller;
 
@@ -17,7 +19,7 @@ final class ControllerFinderTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->controllerFinder = new ControllerFinder;
+        $this->controllerFinder = new ControllerFinder();
     }
 
     public function testFindControllersInDirs(): void
